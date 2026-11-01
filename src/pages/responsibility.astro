@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+
+const principles = [
+  {
+    number: '03',
+    title: 'Community and stakeholder relationships',
+    body: 'We recognise the importance of constructive engagement with communities and stakeholders connected to upstream operations. Respect, clear communication and an understanding of local concerns are important to the way we intend to build our business.',
+  },
+  {
+    number: '04',
+    title: 'Governance and integrity',
+    body: 'We aim to conduct business with integrity, clear accountability and appropriate oversight. Sound decision-making, responsible relationships and attention to applicable requirements are central to the business we seek to develop.',
+  },
+  {
+    number: '05',
+    title: 'Nigerian participation',
+    body: 'We value the contribution of Nigerian professionals, businesses and expertise to the energy sector. As opportunities develop, we seek to work with capable local participants and appropriate specialist partners.',
+  },
+];
+---
+
+<BaseLayout
+  title="Responsible Business | Dawn Oil Limited"
+  description="Learn about the principles guiding Dawn Oil Limited’s approach to safety, environmental considerations, stakeholder relationships, governance and Nigerian participation."
+>
+  <InnerHero
+    eyebrow="Responsible business"
+    title="Responsible business"
+    intro="Our ambition is to build an upstream energy business that treats commercial performance and responsible conduct as connected priorities."
+    marker="07 — Responsibility"
+    imageSrc="/assets/editorial/ghana-mangrove-waterway.webp"
+    imageSrcSet="/assets/editorial/ghana-mangrove-waterway-900.webp 900w, /assets/editorial/ghana-mangrove-waterway.webp 1800w"
+    imageAlt="Aerial view of a mangrove waterway and coastline in Ghana"
+    imageWidth={1800}
+    imageHeight={1013}
+    imagePosition="center"
+  />
+
+  <section class="section section-white" aria-labelledby="responsibility-intro-title">
+    <div class="container editorial-grid" data-reveal>
+      <div class="section-heading">
+        <p class="eyebrow">Our approach</p>
+        <h2 id="responsibility-intro-title">Responsible conduct begins with how an opportunity is considered.</h2>
+      </div>
+      <div class="editorial-copy inner-editorial-copy">
+        <p class="lead">We seek to consider people, the environment and the interests of relevant stakeholders in the opportunities we pursue.</p>
+        <p>These considerations inform how we evaluate potential investments, select suitable partners and define responsibilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream" aria-labelledby="safety-title">
+    <div class="container responsibility-feature">
+      <figure class="editorial-image" data-reveal>
+        <img
+          src="/assets/editorial/industrial-safety-inspection.webp"
+          srcset="/assets/editorial/industrial-safety-inspection-900.webp 900w, /assets/editorial/industrial-safety-inspection.webp 1400w"
+          sizes="(max-width: 800px) calc(100vw - 40px), 50vw"
+          alt="A white safety helmet suspended inside an industrial facility"
+          width="1400"
+          height="933"
+          loading="lazy"
+        />
+        <figcaption>Safety and operational responsibility</figcaption>
+      </figure>
+      <div class="responsibility-feature-copy" data-reveal>
+        <p class="principle-number">01</p>
+        <p class="eyebrow">Safety and operational responsibility</p>
+        <h2 id="safety-title">Clear standards and clearly defined responsibilities.</h2>
+        <p class="lead">Safe operations are fundamental to long-term asset stewardship.</p>
+        <p>In evaluating opportunities and potential partnerships, we recognise the importance of appropriate operating standards, competent teams and clearly defined responsibilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="environment-statement" aria-labelledby="environment-title">
+    <div class="container environment-grid" data-reveal>
+      <div>
+        <p class="principle-number">02</p>
+        <p class="eyebrow eyebrow-amber">Environmental considerations</p>
+      </div>
+      <div>
+        <h2 id="environment-title">Consider environmental risks and obligations early.</h2>
+        <p>Environmental risks and obligations form an important part of understanding an upstream investment. We seek to consider these issues early and to work with suitable partners and advisers in evaluating how they should be managed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" aria-labelledby="principles-title">
+    <div class="container">
+      <div class="section-intro" data-reveal>
+        <div>
+          <p class="eyebrow">Connected principles</p>
+          <h2 id="principles-title">Relationships, oversight and participation</h2>
+        </div>
+        <p>Responsible business depends on constructive engagement, sound governance and the contribution of capable Nigerian participants.</p>
+      </div>
+      <div class="responsibility-principles">
+        {principles.map((principle, index) => (
+          <article class="responsibility-principle" data-reveal style={`--delay: ${index * 70}ms`}>
+            <span>{principle.number}</span>
+            <h3>{principle.title}</h3>
+            <p>{principle.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="responsibility-cta-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Business enquiries</p>
+      <h2 id="responsibility-cta-title">Start a conversation with Dawn Oil.</h2>
+      <p>Contact our team about a potential upstream opportunity, partnership or corporate enquiry.</p>
+      <a class="button button-light" href="/contact">Contact Dawn Oil <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

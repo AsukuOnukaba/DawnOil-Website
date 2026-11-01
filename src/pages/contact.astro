@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+---
+
+<BaseLayout
+  title="Contact Dawn Oil | Dawn Oil Limited"
+  description="Contact Dawn Oil Limited about upstream business opportunities, partnerships and corporate enquiries."
+>
+  <InnerHero
+    eyebrow="Contact"
+    title="Contact Dawn Oil"
+    intro="For business opportunities, partnerships and corporate enquiries, please introduce your organisation and the nature of your interest."
+    marker="08 — Contact"
+    imageSrc="/assets/editorial/bright-meeting-room.webp"
+    imageSrcSet="/assets/editorial/bright-meeting-room-900.webp 900w, /assets/editorial/bright-meeting-room.webp 1800w"
+    imageAlt="Modern business lounge with seating and a city view"
+    imageWidth={1800}
+    imageHeight={2700}
+    imagePosition="center 64%"
+  />
+
+  <section class="section section-white" aria-labelledby="contact-overview-title">
+    <div class="container contact-overview-grid">
+      <div data-reveal>
+        <p class="eyebrow">Business enquiries</p>
+        <h2 id="contact-overview-title">Begin with a clear introduction.</h2>
+        <p class="lead">We welcome enquiries from asset owners, prospective operating and technical partners, financial partners and other relevant counterparties.</p>
+        <p>Please provide a concise overview of your organisation and the opportunity or collaboration you would like to discuss.</p>
+        <dl class="verified-contact-details">
+          <div>
+            <dt>Company</dt>
+            <dd>Dawn Oil Limited</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="contact-context-image" data-reveal>
+        <img
+          src="/assets/editorial/lagos-cityscape.webp"
+          srcset="/assets/editorial/lagos-cityscape-900.webp 900w, /assets/editorial/lagos-cityscape.webp 1400w"
+          sizes="(max-width: 800px) calc(100vw - 40px), 42vw"
+          alt="City buildings in Lagos, Nigeria"
+          width="1400"
+          height="2097"
+          loading="lazy"
+        />
+        <figcaption>Lagos, Nigeria</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section-cream enquiry-section" aria-labelledby="enquiry-form-title">
+    <div class="container enquiry-grid">
+      <div class="enquiry-intro" data-reveal>
+        <p class="eyebrow">Business enquiry form</p>
+        <h2 id="enquiry-form-title">Tell us what you would like to discuss.</h2>
+        <p>Provide a brief introduction only. Do not submit confidential technical, financial or personal documents through this form.</p>
+        <div class="enquiry-types" aria-label="Enquiry categories">
+          <span>Opportunities</span>
+          <span>Partnerships</span>
+          <span>Corporate enquiries</span>
+        </div>
+      </div>
+
+      <form class="enquiry-form" data-contact-form novalidate data-reveal>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" maxlength="120" required aria-describedby="full-name-error" />
+            <span class="field-error" id="full-name-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="organisation">Organisation <span aria-hidden="true">*</span></label>
+            <input id="organisation" name="organisation" type="text" autocomplete="organization" maxlength="160" required aria-describedby="organisation-error" />
+            <span class="field-error" id="organisation-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="business-email">Business email <span aria-hidden="true">*</span></label>
+            <input id="business-email" name="email" type="email" autocomplete="email" maxlength="180" required aria-describedby="business-email-error" />
+            <span class="field-error" id="business-email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="telephone">Telephone <span class="optional-label">Optional</span></label>
+            <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="Include country code" />
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="enquiry-type">Enquiry type <span aria-hidden="true">*</span></label>
+            <select id="enquiry-type" name="enquiryType" required aria-describedby="enquiry-type-error">
+              <option value="">Select an enquiry type</option>
+              <option value="opportunity">Opportunity</option>
+              <option value="partnership">Partnership</option>
+              <option value="corporate">Corporate enquiry</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error" id="enquiry-type-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="7" minlength="20" maxlength="1500" required aria-describedby="message-guidance message-error"></textarea>
+            <span class="field-guidance" id="message-guidance">20–1,500 characters. Please do not include confidential information.</span>
+            <span class="field-error" id="message-error" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <label class="privacy-check" for="privacy-acknowledgement">
+          <input id="privacy-acknowledgement" name="privacyAcknowledgement" type="checkbox" required aria-describedby="privacy-error" />
+          <span>I understand that the information provided will be used to respond to this enquiry.</span>
+        </label>
+        <span class="field-error privacy-error" id="privacy-error" aria-live="polite"></span>
+
+        <div class="form-actions">
+          <button class="button" type="submit" disabled aria-disabled="true">Send enquiry</button>
+          <p><span aria-hidden="true">*</span> Required fields</p>
+        </div>
+        <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <script is:inline>
+    const form = document.querySelector('[data-contact-form]');
+
+    if (form instanceof HTMLFormElement) {
+      const enquiryType = form.querySelector('#enquiry-type');
+      const requestedType = new URLSearchParams(window.location.search).get('enquiry');
+      const allowedTypes = ['opportunity', 'partnership', 'corporate', 'other'];
+
+      if (enquiryType instanceof HTMLSelectElement && requestedType && allowedTypes.includes(requestedType)) {
+        enquiryType.value = requestedType;
+      }
+
+      const fields = Array.from(form.querySelectorAll('input[required], select[required], textarea[required]'));
+
+      const messageFor = (field) => {
+        if (field.validity.valueMissing) return 'Please complete this field.';
+        if (field.validity.typeMismatch) return 'Enter a valid business email address.';
+        if (field.validity.tooShort) return `Enter at least ${field.minLength} characters.`;
+        return '';
+      };
+
+      const validateField = (field) => {
+        const error = document.getElementById(field.getAttribute('aria-describedby')?.split(' ').at(-1) || '');
+        const message = messageFor(field);
+        field.setAttribute('aria-invalid', message ? 'true' : 'false');
+        if (error) error.textContent = message;
+        return !message;
+      };
+
+      fields.forEach((field) => {
+        field.addEventListener('blur', () => validateField(field));
+        field.addEventListener('change', () => {
+          if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+        });
+        field.addEventListener('input', () => {
+          if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        fields.forEach((field) => validateField(field));
+      });
+    }
+  </script>
+</BaseLayout>

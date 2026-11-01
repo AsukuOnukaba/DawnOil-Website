@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+
+const leadershipPriorities = [
+  {
+    number: '01',
+    title: 'Opportunity assessment',
+    body: 'Commercial judgement and disciplined decision-making inform how the company considers upstream opportunities.',
+  },
+  {
+    number: '02',
+    title: 'Partnerships',
+    body: 'Leadership shapes relationships with the technical, operating and financial capabilities appropriate to each opportunity.',
+  },
+  {
+    number: '03',
+    title: 'Growth',
+    body: 'The company’s direction is grounded in clear strategy, well-defined responsibilities and a sound commercial basis.',
+  },
+];
+---
+
+<BaseLayout
+  title="Leadership | Dawn Oil Limited"
+  description="Learn about the role of leadership in Dawn Oil Limited’s approach to upstream opportunities, partnerships and growth."
+  indexable={false}
+>
+  <InnerHero
+    eyebrow="Leadership"
+    title="Our leadership"
+    intro="Dawn Oil’s directors bring experience in the energy sector, commercial strategy and business development. Their combined expertise guides the company’s approach to opportunity assessment, partnerships and growth."
+    marker="05 — Leadership"
+    imageSrc="/assets/editorial/leadership-boardroom.webp"
+    imageSrcSet="/assets/editorial/leadership-boardroom-900.webp 900w, /assets/editorial/leadership-boardroom.webp 1800w"
+    imageAlt="An empty modern boardroom with amber chairs"
+    imageWidth={1800}
+    imageHeight={2700}
+    imagePosition="center 64%"
+  />
+
+  <section class="section section-white leadership-overview" aria-labelledby="leadership-overview-title">
+    <div class="container leadership-overview-grid">
+      <div data-reveal>
+        <p class="eyebrow">Experience behind the business</p>
+        <h2 id="leadership-overview-title">Guiding strategy, relationships and growth</h2>
+      </div>
+      <div class="leadership-overview-copy" data-reveal>
+        <p class="lead">Dawn Oil brings together petroleum and energy industry professionals with experience in commercial strategy, business development, negotiations and the structuring of upstream investment opportunities.</p>
+        <p>The company’s approach places emphasis on clear strategy, disciplined decision-making and productive relationships.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream leadership-priorities" aria-labelledby="leadership-priorities-title">
+    <div class="container">
+      <div class="section-intro" data-reveal>
+        <div>
+          <p class="eyebrow">Leadership in practice</p>
+          <h2 id="leadership-priorities-title">A commercially grounded approach</h2>
+        </div>
+        <p>Leadership connects the commercial case with the capabilities and relationships required to progress an opportunity.</p>
+      </div>
+      <div class="leadership-priority-grid">
+        {leadershipPriorities.map((priority, index) => (
+          <article class="leadership-priority" data-reveal style={`--delay: ${index * 75}ms`}>
+            <span>{priority.number}</span>
+            <h3>{priority.title}</h3>
+            <p>{priority.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="leadership-cta-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Business enquiries</p>
+      <h2 id="leadership-cta-title">Start a conversation with Dawn Oil.</h2>
+      <p>Contact the company about an upstream opportunity, potential partnership or corporate enquiry.</p>
+      <a class="button button-light" href="/contact">Contact Dawn Oil <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

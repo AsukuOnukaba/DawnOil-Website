@@ -1,0 +1,41 @@
+---
+import { primaryNavigation } from '../data/navigation';
+
+const footerLinks = primaryNavigation.filter((item) => item.label !== 'Home');
+---
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <a href="/" aria-label="Dawn Oil Limited — home">
+        <img src="/assets/brand/dawn-oil-logo-248.webp" alt="Dawn Oil Limited" width="248" height="196" loading="lazy" decoding="async" />
+      </a>
+      <p>Upstream investment interests, commercial capability and strategic partnerships in Nigeria.</p>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <p class="footer-heading">Explore</p>
+      <ul>
+        {footerLinks.map((item) => (
+          <li>
+            {item.live ? (
+              <a href={item.href}>{item.label}</a>
+            ) : (
+              <span class="footer-unavailable" aria-disabled="true">{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer-enquiry">
+      <p class="footer-heading">Business enquiries</p>
+      <p>Start a conversation about an upstream opportunity or potential collaboration.</p>
+      <a class="text-link" href="/contact">Contact Dawn Oil <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Dawn Oil Limited.</p>
+    <a href="/">Home <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>

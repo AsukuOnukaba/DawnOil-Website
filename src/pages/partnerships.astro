@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+
+const partnerGroups = [
+  {
+    number: '01',
+    title: 'Operating and technical partners',
+    body: 'We seek relationships with experienced organisations that can contribute the technical and operating capabilities required for a particular opportunity. These relationships should establish clear responsibilities and a practical approach to progressing the investment.',
+  },
+  {
+    number: '02',
+    title: 'Financial partners',
+    body: 'We welcome discussions with prospective financial partners interested in commercially grounded upstream opportunities. The appropriate funding structure will depend on the investment case, transaction requirements and objectives of the participating parties.',
+  },
+  {
+    number: '03',
+    title: 'Asset owners and counterparties',
+    body: 'We are open to confidential discussions with asset owners and other counterparties considering potential upstream transactions or collaborative opportunities in Nigeria.',
+  },
+];
+---
+
+<BaseLayout
+  title="Partnerships | Dawn Oil Limited"
+  description="Learn how Dawn Oil Limited approaches collaboration with operating, technical and financial partners, asset owners and counterparties."
+>
+  <InnerHero
+    eyebrow="Partnerships"
+    title="Partnerships"
+    intro="We believe strong upstream opportunities are developed through the right combination of commercial judgement, technical capability, operating experience and capital."
+    marker="06 — Partnerships"
+    imageSrc="/assets/editorial/offshore-infrastructure.webp"
+    imageSrcSet="/assets/editorial/offshore-infrastructure-900.webp 900w, /assets/editorial/offshore-infrastructure.webp 1600w"
+    imageAlt="Offshore energy infrastructure surrounded by open water"
+    imageWidth={1600}
+    imageHeight={1200}
+    imagePosition="64% center"
+  />
+
+  <section class="partnership-intro" aria-labelledby="partnership-intro-title">
+    <div class="container partnership-intro-grid" data-reveal>
+      <p class="eyebrow eyebrow-amber">Working together</p>
+      <h2 id="partnership-intro-title">Complementary strengths. Clearly defined roles.</h2>
+      <p>Dawn Oil welcomes discussions with organisations whose strengths complement our business interests.</p>
+    </div>
+  </section>
+
+  <section class="section section-white" aria-labelledby="partner-groups-title">
+    <div class="container">
+      <div class="section-intro" data-reveal>
+        <div>
+          <p class="eyebrow">Prospective relationships</p>
+          <h2 id="partner-groups-title">The capabilities an opportunity requires</h2>
+        </div>
+        <p>Each relationship should reflect the investment case, the parties involved and the work required to progress it.</p>
+      </div>
+      <div class="partner-grid">
+        {partnerGroups.map((group, index) => (
+          <article class="partner-card" data-reveal style={`--delay: ${index * 75}ms`}>
+            <span>{group.number}</span>
+            <h3>{group.title}</h3>
+            <p>{group.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream conversation-section" aria-labelledby="conversation-title">
+    <div class="container conversation-grid">
+      <div data-reveal>
+        <p class="eyebrow">How to start a conversation</p>
+        <h2 id="conversation-title">A clear introduction is the best place to begin.</h2>
+      </div>
+      <div class="conversation-copy" data-reveal>
+        <p class="lead">Please send a brief introduction to your organisation, the nature of your interest and the appropriate contact person.</p>
+        <p>Where necessary, further information can be exchanged following agreement on confidentiality arrangements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="partnerships-cta-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Potential collaborations</p>
+      <h2 id="partnerships-cta-title">Explore how our capabilities could come together.</h2>
+      <p>Start a conversation about an upstream transaction or collaborative opportunity in Nigeria.</p>
+      <a class="button button-light" href="/contact?enquiry=partnership">Discuss a collaboration <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

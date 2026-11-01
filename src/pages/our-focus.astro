@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+
+const focusAreas = [
+  {
+    number: '01',
+    title: 'Upstream asset acquisitions',
+    paragraphs: [
+      'We are interested in acquiring participating interests in suitable Nigerian oil and gas assets. Our approach considers the commercial rationale, transaction structure, technical requirements, funding needs and stakeholder environment associated with an opportunity.',
+      'We seek opportunities where a clear investment case and the right combination of expertise can support responsible long-term development.',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Licensing opportunities',
+    paragraphs: [
+      'We pursue relevant opportunities within upstream licensing processes, working with appropriate partners and advisers to develop submissions and assess the commitments associated with participation.',
+      'Our interests are guided by commercial judgement and the ability to assemble the capabilities required for a particular opportunity.',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Strategic participation and partnerships',
+    paragraphs: [
+      'We are open to discussing collaborative structures with asset owners, experienced operators, technical specialists and prospective financial partners.',
+      'The structure of each relationship should reflect the opportunity and the responsibilities of the parties involved.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Our Focus | Dawn Oil Limited"
+  description="Explore Dawn Oil Limited’s interests in upstream asset acquisitions, licensing opportunities and strategic participation in Nigeria."
+>
+  <InnerHero
+    eyebrow="Our Focus"
+    title="Focused on upstream opportunity"
+    intro="Dawn Oil seeks opportunities to participate in Nigeria’s upstream oil and gas sector through acquisitions, licensing processes and strategic collaboration."
+    marker="03 — Focus"
+    imagePosition="72% center"
+  />
+
+  <section class="section section-cream" aria-labelledby="focus-overview-title">
+    <div class="container editorial-grid" data-reveal>
+      <div class="section-heading">
+        <p class="eyebrow">Our business interests</p>
+        <h2 id="focus-overview-title">Each opportunity considered on its own merits</h2>
+      </div>
+      <div class="editorial-copy inner-editorial-copy">
+        <p class="lead">
+          We assess each opportunity on its own commercial merits and the capabilities required to progress it.
+        </p>
+        <p>
+          Our focus brings together commercial judgement, appropriate structures and complementary expertise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white focus-detail-section" aria-labelledby="focus-detail-title">
+    <div class="container">
+      <h2 class="visually-hidden" id="focus-detail-title">Dawn Oil business focus areas</h2>
+      <div class="focus-detail-list">
+        {focusAreas.map((area, index) => (
+          <article class="focus-detail" data-reveal style={`--delay: ${index * 70}ms`}>
+            <div class="focus-detail-number">{area.number}</div>
+            <div>
+              <h3>{area.title}</h3>
+              {area.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="focus-cta-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Start a conversation</p>
+      <h2 id="focus-cta-title">Have an opportunity to discuss?</h2>
+      <p>Please contact Dawn Oil with a short introduction to your organisation and the nature of the proposed opportunity.</p>
+      <a class="button button-light" href="/contact?enquiry=opportunity">Discuss an opportunity <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

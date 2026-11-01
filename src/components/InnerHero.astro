@@ -1,0 +1,53 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  marker: string;
+  imagePosition?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageSrcSet?: string;
+  imageSizes?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  intro,
+  marker,
+  imagePosition = '68% center',
+  imageSrc = '/assets/hero/dawn-oil-offshore-platform.webp',
+  imageAlt = 'Offshore energy infrastructure at dusk',
+  imageWidth = 1320,
+  imageHeight = 875,
+  imageSrcSet = '/assets/hero/dawn-oil-offshore-platform-900.webp 900w, /assets/hero/dawn-oil-offshore-platform.webp 1320w',
+  imageSizes = '(max-width: 800px) calc(100vw - 40px), 58vw',
+} = Astro.props;
+---
+
+<section class="inner-hero" aria-labelledby="page-title">
+  <div class="container inner-hero-grid">
+    <div class="inner-hero-copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1 id="page-title">{title}</h1>
+      <p class="inner-hero-intro">{intro}</p>
+    </div>
+    <div class="inner-hero-media" data-reveal>
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        width={imageWidth}
+        height={imageHeight}
+        srcset={imageSrcSet}
+        sizes={imageSrcSet ? imageSizes : undefined}
+        fetchpriority="high"
+        decoding="async"
+        style={`object-position: ${imagePosition}`}
+      />
+      <span aria-hidden="true">{marker}</span>
+    </div>
+  </div>
+</section>

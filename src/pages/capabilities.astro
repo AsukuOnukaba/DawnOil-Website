@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/InnerHero.astro';
+
+const capabilities = [
+  {
+    number: '01',
+    title: 'Opportunity identification and assessment',
+    body: 'We assess potential opportunities against a clear business rationale. Our commercial review considers the market setting, transaction structure, development objectives, counterparties and the key issues that need to be resolved before an investment decision.',
+  },
+  {
+    number: '02',
+    title: 'Commercial structuring and negotiations',
+    body: 'We work towards arrangements that align the objectives of the participating parties. This includes consideration of roles, responsibilities, commercial terms and the practical requirements for progressing an opportunity.',
+  },
+  {
+    number: '03',
+    title: 'Partnership development',
+    body: 'We engage with prospective technical, operating and financial partners to identify complementary capabilities. Our objective is to establish a clear basis for collaboration and a shared understanding of the opportunity.',
+  },
+  {
+    number: '04',
+    title: 'Stakeholder engagement',
+    body: 'We recognise the importance of constructive relationships with counterparties and other relevant stakeholders. Clear communication and a sound understanding of the operating environment inform our approach to business development.',
+  },
+  {
+    number: '05',
+    title: 'Progressing opportunities towards completion',
+    body: 'We work with relevant partners and professional advisers to address due diligence, transaction documentation, funding arrangements and the approvals required for a proposed transaction.',
+  },
+];
+---
+
+<BaseLayout
+  title="Commercial Capabilities | Dawn Oil Limited"
+  description="Explore Dawn Oil Limited’s commercial strategy, opportunity assessment, negotiations, partnership development and stakeholder engagement capabilities."
+>
+  <InnerHero
+    eyebrow="Commercial capabilities"
+    title="Commercial capability for upstream opportunities"
+    intro="Dawn Oil’s contribution centres on commercial strategy, business development, negotiations and the structuring of upstream investment opportunities."
+    marker="04 — Capabilities"
+    imageSrc="/assets/editorial/industrial-pipework.webp"
+    imageSrcSet="/assets/editorial/industrial-pipework-900.webp 900w, /assets/editorial/industrial-pipework.webp 1400w"
+    imageAlt="Detailed industrial pipework and process equipment"
+    imageWidth={1400}
+    imageHeight={816}
+    imagePosition="center"
+  />
+
+  <section class="section section-white" aria-labelledby="capability-overview-title">
+    <div class="container capability-overview" data-reveal>
+      <div>
+        <p class="eyebrow">Our contribution</p>
+        <h2 id="capability-overview-title">A commercially disciplined route through each opportunity</h2>
+      </div>
+      <p class="lead">
+        We seek to combine these strengths with the technical, operating and financial capabilities appropriate to each transaction.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-cream capability-process" aria-labelledby="capability-process-title">
+    <div class="container">
+      <div class="process-heading" data-reveal>
+        <p class="eyebrow">How we contribute</p>
+        <h2 id="capability-process-title">From initial assessment to a defined transaction</h2>
+      </div>
+      <ol class="process-list">
+        {capabilities.map((capability, index) => (
+          <li data-reveal style={`--delay: ${index * 55}ms`}>
+            <span class="process-number">{capability.number}</span>
+            <h3>{capability.title}</h3>
+            <p>{capability.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="capabilities-cta-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Business enquiries</p>
+      <h2 id="capabilities-cta-title">Bring an upstream opportunity into focus.</h2>
+      <p>Contact Dawn Oil to introduce your organisation and the opportunity you would like to discuss.</p>
+      <a class="button button-light" href="/contact">Speak with our team <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

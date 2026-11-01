@@ -1,0 +1,59 @@
+---
+import { contactRoute, primaryNavigation } from '../data/navigation';
+
+const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Dawn Oil Limited — home">
+      <img src="/assets/brand/dawn-oil-logo-248.webp" alt="Dawn Oil Limited" width="248" height="196" decoding="async" />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <ul>
+        {primaryNavigation.map((item) => (
+          <li>
+            {item.live ? (
+              <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+            ) : (
+              <span class="nav-unavailable" aria-disabled="true">{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+      {contactRoute.live ? (
+        <a class="button button-small" href={contactRoute.href} aria-current={currentPath === contactRoute.href ? 'page' : undefined}>Contact</a>
+      ) : (
+        <span class="button button-small button-disabled" aria-disabled="true">Contact</span>
+      )}
+    </nav>
+
+    <details class="mobile-menu">
+      <summary aria-label="Open navigation">
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </summary>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <ul>
+          {primaryNavigation.map((item) => (
+            <li>
+              {item.live ? (
+                <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+              ) : (
+                <span class="mobile-nav-unavailable" aria-disabled="true">{item.label}</span>
+              )}
+            </li>
+          ))}
+          <li>
+            {contactRoute.live ? (
+              <a class="mobile-contact" href={contactRoute.href} aria-current={currentPath === contactRoute.href ? 'page' : undefined}>Contact</a>
+            ) : (
+              <span class="mobile-contact mobile-contact-disabled" aria-disabled="true">Contact</span>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

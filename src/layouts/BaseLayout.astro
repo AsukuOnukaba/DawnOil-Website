@@ -1,0 +1,83 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  indexable?: boolean;
+  socialImage?: string;
+}
+
+const {
+  title,
+  description,
+  indexable = true,
+  socialImage = '/assets/hero/dawn-oil-offshore-platform.png',
+} = Astro.props;
+
+const canonicalUrl = indexable && Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
+const socialImageUrl = Astro.site ? new URL(socialImage, Astro.site) : undefined;
+const robots = indexable ? 'index, follow' : 'noindex, nofollow, noarchive';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#fffdf9" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dawn Oil Limited" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    {socialImageUrl && <meta property="og:image" content={socialImageUrl} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+
+    <script is:inline>
+      document.documentElement.classList.add('motion-ready');
+
+      const animatedItems = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+        animatedItems.forEach((item) => observer.observe(item));
+      } else {
+        animatedItems.forEach((item) => item.classList.add('is-visible'));
+      }
+
+      document.querySelectorAll('.mobile-nav a').forEach((link) => {
+        link.addEventListener('click', () => {
+          link.closest('details')?.removeAttribute('open');
+        });
+      });
+    </script>
+  </body>
+</html>

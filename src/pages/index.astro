@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const focusAreas = [
+  {
+    number: '01',
+    title: 'Upstream acquisitions',
+    body: 'We are interested in opportunities to acquire participating interests in suitable oil and gas assets in Nigeria.',
+  },
+  {
+    number: '02',
+    title: 'Licensing opportunities',
+    body: 'We pursue relevant opportunities within upstream licensing processes, working with appropriate partners and advisers.',
+  },
+  {
+    number: '03',
+    title: 'Strategic partnerships',
+    body: 'We seek relationships that combine commercial capability with technical expertise, operating experience and access to capital.',
+    href: '/partnerships',
+  },
+];
+
+const capabilityAreas = [
+  'Opportunity assessment',
+  'Commercial structuring',
+  'Negotiation',
+  'Partner development',
+  'Stakeholder engagement',
+];
+---
+
+<BaseLayout
+  title="Dawn Oil Limited | Nigerian Upstream Oil and Gas"
+  description="Discover Dawn Oil Limited, its commercial capabilities and interests in Nigerian upstream oil and gas investment opportunities and strategic partnerships."
+>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-light">Dawn Oil Limited</p>
+        <h1 id="hero-title">Building value in Nigerian upstream energy</h1>
+        <p class="hero-intro">
+          Dawn Oil Limited is an upstream petroleum company pursuing oil and gas investment opportunities in Nigeria. We bring commercial experience and a partnership approach to the identification, evaluation and development of opportunities.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/our-focus">Explore our focus</a>
+          <a class="text-link text-link-light" href="/contact">Contact Dawn Oil <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <p class="hero-index" aria-hidden="true"><span>01</span> Upstream opportunity</p>
+    </div>
+  </section>
+
+  <section class="section section-cream" id="about" aria-labelledby="about-title">
+    <div class="container editorial-grid" data-reveal>
+      <div class="section-heading">
+        <p class="eyebrow">Who we are</p>
+        <h2 id="about-title">Commercial judgement.<br />Partnership approach.</h2>
+      </div>
+      <div class="editorial-copy">
+        <p class="lead">
+          Dawn Oil brings together petroleum and energy industry professionals with experience in commercial strategy, business development, negotiations and the structuring of upstream investment opportunities.
+        </p>
+        <p>
+          We seek to build a business grounded in sound judgement, responsible stewardship and productive relationships.
+        </p>
+        <a class="text-link" href="/about">About Dawn Oil <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="focus" aria-labelledby="focus-title">
+    <div class="container">
+      <div class="section-intro" data-reveal>
+        <div>
+          <p class="eyebrow">Our focus</p>
+          <h2 id="focus-title">Purposeful pathways to upstream participation</h2>
+        </div>
+        <p>Our interests centre on carefully selected opportunities and the capabilities needed to progress them.</p>
+      </div>
+
+      <div class="focus-grid">
+        {focusAreas.map((area, index) => (
+          <article class="focus-card" data-reveal style={`--delay: ${index * 80}ms`}>
+            <div class="card-topline">
+              <span>{area.number}</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <h3>{area.title}</h3>
+            <p>{area.body}</p>
+            {area.href && <a class="text-link focus-card-link" href={area.href}>Explore partnerships <span aria-hidden="true">↗</span></a>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-ink" id="capabilities" aria-labelledby="capabilities-title">
+    <div class="container capability-grid">
+      <div class="capability-copy" data-reveal>
+        <p class="eyebrow eyebrow-amber">Commercial capabilities</p>
+        <h2 id="capabilities-title">A disciplined approach to opportunity</h2>
+        <p class="lead">
+          Our approach brings together opportunity assessment, commercial structuring, negotiation and stakeholder engagement.
+        </p>
+        <p>We work towards clear investment propositions and well-defined responsibilities between participants.</p>
+        <a class="text-link text-link-light" href="/capabilities">Explore our capabilities <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <ol class="capability-list" data-reveal>
+        {capabilityAreas.map((area, index) => (
+          <li><span>{String(index + 1).padStart(2, '0')}</span>{area}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-cream leadership-section" id="leadership" aria-labelledby="leadership-title">
+    <div class="container leadership-grid" data-reveal>
+      <div class="leadership-marker" aria-hidden="true">
+        <span>Leadership</span>
+        <b>DO</b>
+      </div>
+      <div class="leadership-copy">
+        <p class="eyebrow">Our leadership</p>
+        <h2 id="leadership-title">The experience behind our business</h2>
+        <p class="lead">Dawn Oil’s directors guide the company’s strategy, partnerships and growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="responsibility" aria-labelledby="responsibility-title">
+    <div class="container responsibility-grid">
+      <div class="responsibility-heading" data-reveal>
+        <p class="eyebrow">Responsible business</p>
+        <h2 id="responsibility-title">Commercial performance and responsible conduct belong together.</h2>
+      </div>
+      <div class="responsibility-copy" data-reveal>
+        <p class="lead">
+          We seek to consider people, the environment and the interests of relevant stakeholders in the opportunities we pursue.
+        </p>
+        <div class="principles" aria-label="Responsible business principles">
+          <span>Safety</span>
+          <span>Environment</span>
+          <span>Stakeholders</span>
+          <span>Governance</span>
+          <span>Nigerian participation</span>
+        </div>
+        <a class="text-link responsibility-link" href="/responsibility">Our approach to responsibility <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-inner" data-reveal>
+      <p class="eyebrow eyebrow-light">Start a conversation</p>
+      <h2 id="contact-title">Discuss a potential opportunity with Dawn Oil</h2>
+      <p>We welcome enquiries from asset owners, prospective partners and financial institutions interested in exploring a business relationship.</p>
+      <a class="button button-light" href="/contact">Start a conversation <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

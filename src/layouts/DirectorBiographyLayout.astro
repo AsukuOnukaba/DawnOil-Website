@@ -1,0 +1,55 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { DirectorProfile } from '../types/leadership';
+
+interface Props {
+  profile: DirectorProfile;
+}
+
+const { profile } = Astro.props;
+---
+
+<BaseLayout
+  title={`${profile.publicName} | Leadership | Dawn Oil Limited`}
+  description={profile.shortBiography}
+>
+  <article class="director-biography">
+    <div class="container director-biography-header">
+      <div>
+        <a class="text-link biography-back-link" href="/leadership">← Leadership</a>
+        <p class="eyebrow">{profile.title}</p>
+        <h1>{profile.publicName}</h1>
+        <p class="lead">{profile.shortBiography}</p>
+      </div>
+      <img src={profile.portraitSrc} alt={profile.portraitAlt} width="960" height="1200" />
+    </div>
+
+    <div class="container director-biography-body">
+      <section aria-labelledby="biography-title">
+        <p class="eyebrow">Biography</p>
+        <h2 id="biography-title">Professional experience</h2>
+        {profile.fullBiography.map((paragraph) => <p>{paragraph}</p>)}
+      </section>
+
+      <aside aria-label="Director credentials">
+        {profile.previousExperience.length > 0 && (
+          <section>
+            <h2>Previous experience</h2>
+            <ul>{profile.previousExperience.map((item) => <li>{item}</li>)}</ul>
+          </section>
+        )}
+        {profile.qualifications.length > 0 && (
+          <section>
+            <h2>Qualifications</h2>
+            <ul>{profile.qualifications.map((item) => <li>{item}</li>)}</ul>
+          </section>
+        )}
+        {profile.professionalProfileUrl && (
+          <a class="text-link" href={profile.professionalProfileUrl} rel="noopener noreferrer">
+            Professional profile <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
