@@ -11,7 +11,7 @@ export const primaryNavigation: SiteRoute[] = [
   { label: 'About Us', href: '/about', live: true },
   { label: 'Our Focus', href: '/our-focus', live: true },
   { label: 'Capabilities', href: '/capabilities', live: true },
-  { label: 'Leadership', href: '/leadership', live: false },
+  { label: 'Leadership', href: '/leadership', live: true },
   { label: 'Partnerships', href: '/partnerships', live: true },
   { label: 'Responsibility', href: '/responsibility', live: true },
 ];

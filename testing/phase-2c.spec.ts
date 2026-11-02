@@ -30,7 +30,7 @@ for (const innerPage of pages) {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(innerPage.heading);
     await expect(page.locator(`.desktop-nav a[href="${innerPage.route}"]`)).toHaveAttribute('aria-current', 'page');
     await expect(page.locator('a[href=""], a[href="#"]')).toHaveCount(0);
-    await expect(page.locator('a[href="/leadership"]')).toHaveCount(0);
+    await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveCount(1);
 
     const hasHorizontalOverflow = await page.evaluate(() =>
       document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,

@@ -1,0 +1,15 @@
+---
+import DirectorBiographyLayout from '../../layouts/DirectorBiographyLayout.astro';
+import { leadershipProfiles } from '../../data/leadership';
+
+export function getStaticPaths() {
+  return leadershipProfiles.map((profile) => ({
+    params: { slug: profile.slug },
+    props: { profile },
+  }));
+}
+
+const { profile } = Astro.props;
+---
+
+<DirectorBiographyLayout profile={profile} />

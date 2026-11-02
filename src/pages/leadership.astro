@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InnerHero from '../components/InnerHero.astro';
+import DirectorCard from '../components/DirectorCard.astro';
+import { leadershipProfiles } from '../data/leadership';
 
 const leadershipPriorities = [
   {
@@ -24,12 +26,11 @@ const leadershipPriorities = [
 <BaseLayout
   title="Leadership | Dawn Oil Limited"
   description="Learn about the role of leadership in Dawn Oil Limited’s approach to upstream opportunities, partnerships and growth."
-  indexable={false}
 >
   <InnerHero
     eyebrow="Leadership"
     title="Our leadership"
-    intro="Dawn Oil’s directors bring experience in the energy sector, commercial strategy and business development. Their combined expertise guides the company’s approach to opportunity assessment, partnerships and growth."
+    intro="The professionals profiled here bring experience across energy, infrastructure, commercial strategy, regulation and business development."
     marker="05 — Leadership"
     imageSrc="/assets/editorial/leadership-boardroom.webp"
     imageSrcSet="/assets/editorial/leadership-boardroom-900.webp 900w, /assets/editorial/leadership-boardroom.webp 1800w"
@@ -52,7 +53,24 @@ const leadershipPriorities = [
     </div>
   </section>
 
-  <section class="section section-cream leadership-priorities" aria-labelledby="leadership-priorities-title">
+  <section class="section section-cream leadership-profiles" aria-labelledby="leadership-profiles-title">
+    <div class="container">
+      <div class="section-intro" data-reveal>
+        <div>
+          <p class="eyebrow">Leadership profiles</p>
+          <h2 id="leadership-profiles-title">Experience across energy, infrastructure and commerce</h2>
+        </div>
+        <p>Explore the professional experience and qualifications represented in these profiles.</p>
+      </div>
+      <div class="director-card-list">
+        {leadershipProfiles.map((profile) => (
+          <DirectorCard profile={profile} biographyHref={`/leadership/${profile.slug}`} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white leadership-priorities" aria-labelledby="leadership-priorities-title">
     <div class="container">
       <div class="section-intro" data-reveal>
         <div>

@@ -5,6 +5,7 @@ const publicRoutes = [
   '/about',
   '/our-focus',
   '/capabilities',
+  '/leadership',
   '/partnerships',
   '/responsibility',
   '/contact',
@@ -35,7 +36,6 @@ test('public routes expose consistent metadata and valid active navigation', asy
     seenDescriptions.add(description || '');
 
     await expect(page.locator('a[href=""], a[href="#"]')).toHaveCount(0);
-    await expect(page.locator('a[href^="/leadership"]')).toHaveCount(0);
     await expect(page.locator('img:not([alt])')).toHaveCount(0);
 
     const activeLinks = await page.locator('a[href^="/"]').evaluateAll((links) =>
@@ -62,13 +62,13 @@ test('contact query parameters preselect valid enquiry types and submission stay
   await expect(page.getByRole('button', { name: 'Send enquiry' })).toBeDisabled();
 });
 
-test('Leadership is unlinked and explicitly excluded from indexing', async ({ page, request }) => {
+test('Leadership is linked and available for indexing', async ({ page, request }) => {
   const response = await page.goto('/leadership', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow, noarchive');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow');
   await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
-  await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveCount(0);
-  await expect(page.locator('.desktop-nav .nav-unavailable')).toContainText('Leadership');
+  await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('[data-director-card]')).toHaveCount(5);
 
   const robots = await request.get('/robots.txt');
   expect(robots.status()).toBe(200);
@@ -99,7 +99,7 @@ test('keyboard navigation and reduced motion remain functional', async ({ page }
     const mobileNavigation = page.getByRole('navigation', { name: 'Mobile navigation' });
     await expect(mobileNavigation).toBeVisible();
     await expect(mobileNavigation.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
-    await expect(mobileNavigation.locator('.mobile-nav-unavailable')).toContainText('Leadership');
+    await expect(mobileNavigation.getByRole('link', { name: 'Leadership' })).toHaveAttribute('href', '/leadership');
   }
 
   const hasHorizontalOverflow = await page.evaluate(() =>

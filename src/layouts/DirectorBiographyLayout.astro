@@ -17,11 +17,15 @@ const { profile } = Astro.props;
     <div class="container director-biography-header">
       <div>
         <a class="text-link biography-back-link" href="/leadership">← Leadership</a>
-        <p class="eyebrow">{profile.title}</p>
+        <p class="eyebrow">{profile.approvedTitle ?? 'Leadership profile'}</p>
         <h1>{profile.publicName}</h1>
         <p class="lead">{profile.shortBiography}</p>
       </div>
-      <img src={profile.portraitSrc} alt={profile.portraitAlt} width="960" height="1200" />
+      {profile.portraitSrc && profile.portraitAlt ? (
+        <img src={profile.portraitSrc} alt={profile.portraitAlt} width="960" height="1200" />
+      ) : (
+        <div class="director-biography-mark" aria-hidden="true"><span>{profile.publicName.charAt(0)}</span></div>
+      )}
     </div>
 
     <div class="container director-biography-body">
@@ -31,7 +35,7 @@ const { profile } = Astro.props;
         {profile.fullBiography.map((paragraph) => <p>{paragraph}</p>)}
       </section>
 
-      <aside aria-label="Director credentials">
+      <aside aria-label={`${profile.publicName} credentials`}>
         {profile.previousExperience.length > 0 && (
           <section>
             <h2>Previous experience</h2>

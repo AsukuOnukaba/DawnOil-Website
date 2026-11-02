@@ -35,7 +35,7 @@ for (const innerPage of pages) {
     await expect(page.locator('a.brand')).toHaveAttribute('href', '/');
     await expect(page.locator(`.desktop-nav a[href="${innerPage.route}"]`)).toHaveAttribute('aria-current', 'page');
     await expect(page.locator('a[href=""], a[href="#"]')).toHaveCount(0);
-    await expect(page.locator('a[href="/leadership"]')).toHaveCount(0);
+    await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveCount(1);
     await expect(page.getByRole('link', { name: innerPage.cta })).toHaveAttribute('href', innerPage.ctaHref);
 
     const bodyText = await page.locator('body').innerText();

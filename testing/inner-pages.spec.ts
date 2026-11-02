@@ -36,7 +36,7 @@ for (const innerPage of pages) {
     await expect(page.locator('.mobile-nav a[href="/partnerships"]')).toHaveCount(1);
     await expect(page.locator('.site-footer a[href="/capabilities"]')).toHaveCount(1);
     await expect(page.locator('.site-footer a[href="/partnerships"]')).toHaveCount(1);
-    await expect(page.locator('a[href="/leadership"]')).toHaveCount(0);
+    await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveCount(1);
     await expect(page.locator('.desktop-nav a[href="/responsibility"]')).toHaveCount(1);
     await expect(page.locator('.desktop-nav a[href="/contact"]')).toHaveCount(1);
 

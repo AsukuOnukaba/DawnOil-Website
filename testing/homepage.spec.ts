@@ -28,6 +28,7 @@ test('homepage renders without console errors or horizontal overflow', async ({ 
   await expect(page.locator('.desktop-nav a[href="/capabilities"]')).toHaveCount(1);
   await expect(page.locator('.desktop-nav a[href="/partnerships"]')).toHaveCount(1);
   await expect(page.locator('.desktop-nav a[href="/responsibility"]')).toHaveCount(1);
+  await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveCount(1);
   await expect(page.locator('.desktop-nav a[href="/contact"]')).toHaveCount(1);
   await expect(page.getByRole('link', { name: 'Explore our focus' })).toHaveAttribute('href', '/our-focus');
   await expect(page.getByRole('link', { name: 'About Dawn Oil' })).toHaveAttribute('href', '/about');
@@ -37,7 +38,7 @@ test('homepage renders without console errors or horizontal overflow', async ({ 
   await expect(page.getByRole('link', { name: 'Start a conversation' })).toHaveAttribute('href', '/contact');
   await expect(page.locator('.hero a[href="/contact"]')).toHaveCount(1);
   await expect(page.locator('a[href=""], a[href="#"]')).toHaveCount(0);
-  await expect(page.locator('a[href="/leadership"]')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Meet our leadership' })).toHaveAttribute('href', '/leadership');
 
   const hasHorizontalOverflow = await page.evaluate(() =>
     document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,

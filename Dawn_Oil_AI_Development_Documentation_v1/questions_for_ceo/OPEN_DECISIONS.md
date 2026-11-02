@@ -28,9 +28,9 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 8. Confirm whether Dawn requires non-technical content editing access; user prefers no backend but original Dawn brief requested CMS. Default to static until resolved.
 
 ## Phase 2D leadership publication status
-- The Leadership route and reusable director-card/biography structures are implemented locally for review.
-- Navigation and homepage activation remain blocked until at least one director's full public name, current Dawn title, approved portrait, short and full biographies, relevant previous experience and approved qualifications are confirmed for publication.
-- The draft profile in S1 Section 9 has not been published or used to create a biography route.
+- The five profiles supplied in `Dawn Oil LImited - Corporate Bios.pdf` have been integrated into the Leadership route and individual biography routes for client review.
+- The document supplies names, professional histories and qualifications, but does not establish a current Dawn Oil appointment for Banke Alakija-Balogun, Emmanuel Ukegbu, Dr. Lazarus A. Angbazo, Ike Oguine or Anthony Muoneke. No Dawn-specific title is displayed until those appointments are confirmed.
+- No approved director photographs were supplied in the document; the client-review version uses a text-led profile treatment rather than stock portraits.
 
 ## Developer decisions — DO NOT ask CEO to do developer's work
 Astro vs other static tool choice, minor colour tokens, font scale, screenshot measurements, CSS, responsive breakpoints, image optimisation, animation timing, deployment recommendation, QA implementation, copy editing from approved source. CEO approves final appearance, not every CSS pixel.

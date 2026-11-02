@@ -1110,11 +1110,39 @@ main:focus {
   line-height: 1.65;
 }
 
+.director-card-list {
+  display: grid;
+  gap: 28px;
+}
+
 .director-card {
   display: grid;
   grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
   border: 1px solid var(--border);
   background: var(--white);
+}
+
+.director-card-mark,
+.director-biography-mark {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(205, 140, 39, 0.12), transparent 56%),
+    var(--cream-deep);
+  color: var(--amber-deep);
+}
+
+.director-card-mark {
+  min-height: 420px;
+}
+
+.director-card-mark span,
+.director-biography-mark span {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 1;
+  opacity: 0.82;
 }
 
 .director-card > img {
@@ -1153,6 +1181,11 @@ main:focus {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+.director-biography-mark {
+  min-height: 520px;
+  aspect-ratio: 4 / 5;
 }
 
 .biography-back-link {
@@ -2080,6 +2113,15 @@ main:focus {
   .director-card > img {
     min-height: 0;
     aspect-ratio: 4 / 5;
+  }
+
+  .director-card-mark {
+    min-height: 260px;
+  }
+
+  .director-biography-mark {
+    min-height: 340px;
+    max-width: 520px;
   }
 
   .director-biography {
