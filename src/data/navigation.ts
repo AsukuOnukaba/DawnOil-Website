@@ -8,7 +8,7 @@ export interface SiteRoute {
 // destinations here but are rendered as non-links until a real page exists.
 export const primaryNavigation: SiteRoute[] = [
   { label: 'Home', href: '/', live: true },
-  { label: 'About', href: '/about', live: true },
+  { label: 'About Us', href: '/about', live: true },
   { label: 'Our Focus', href: '/our-focus', live: true },
   { label: 'Capabilities', href: '/capabilities', live: true },
   { label: 'Leadership', href: '/leadership', live: false },

@@ -11,6 +11,11 @@
   --border: rgba(38, 48, 59, 0.16);
   --container: 1240px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --type-body: 18px;
+  --type-nav: 1rem;
+  --type-button: 1rem;
+  --type-card: 1.075rem;
+  --type-small: 0.875rem;
 }
 
 *,
@@ -29,8 +34,8 @@ body {
   background: var(--off-white);
   color: var(--charcoal);
   font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: var(--type-body);
+  line-height: 1.68;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -67,19 +72,22 @@ h3 {
   color: var(--charcoal);
   font-weight: 500;
   letter-spacing: -0.035em;
-  line-height: 1.1;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(3.25rem, 4.2vw, 3.625rem);
+  font-size: clamp(3.5rem, 4.2vw, 3.75rem);
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: clamp(2.25rem, 3.1vw, 2.625rem);
+  font-size: clamp(2.5rem, 3.1vw, 2.75rem);
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.9vw, 1.75rem);
+  line-height: 1.2;
 }
 
 .container {
@@ -162,7 +170,7 @@ main:focus {
 .desktop-nav ul a {
   position: relative;
   padding-block: 12px;
-  font-size: 0.875rem;
+  font-size: var(--type-nav);
   font-weight: 500;
   text-decoration: none;
 }
@@ -195,7 +203,7 @@ main:focus {
   display: inline-flex;
   padding-block: 12px;
   color: rgba(38, 48, 59, 0.48);
-  font-size: 0.875rem;
+  font-size: var(--type-nav);
   font-weight: 500;
 }
 
@@ -210,7 +218,7 @@ main:focus {
   padding: 11px 20px;
   background: var(--amber-deep);
   color: var(--white);
-  font-size: 0.9rem;
+  font-size: var(--type-button);
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
@@ -295,8 +303,8 @@ main:focus {
   max-width: 650px;
   margin-bottom: 34px;
   color: rgba(255, 255, 255, 0.86);
-  font-size: 1.08rem;
-  line-height: 1.65;
+  font-size: 1.125rem;
+  line-height: 1.68;
 }
 
 .hero-actions {
@@ -314,7 +322,7 @@ main:focus {
   align-items: center;
   gap: 10px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -330,7 +338,7 @@ main:focus {
   align-items: center;
   gap: 12px;
   color: var(--amber-deep);
-  font-size: 0.74rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1.3;
@@ -357,7 +365,7 @@ main:focus {
   align-items: center;
   gap: 8px;
   color: var(--amber-deep);
-  font-size: 0.9rem;
+  font-size: var(--type-button);
   font-weight: 600;
   text-underline-offset: 5px;
   transition: gap 180ms ease;
@@ -413,7 +421,7 @@ main:focus {
 .lead {
   color: var(--charcoal);
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .editorial-copy p:last-child,
@@ -450,7 +458,7 @@ main:focus {
 }
 
 .focus-card {
-  min-height: 350px;
+  min-height: 370px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 30px;
@@ -470,7 +478,7 @@ main:focus {
   margin-bottom: 92px;
   justify-content: space-between;
   color: var(--amber-deep);
-  font-size: 0.8rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -482,12 +490,13 @@ main:focus {
 .focus-card p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: var(--type-card);
+  line-height: 1.65;
 }
 
 .focus-card .focus-card-link {
   margin-top: 24px;
-  font-size: 0.82rem;
+  font-size: var(--type-button);
 }
 
 .capability-grid {
@@ -519,12 +528,12 @@ main:focus {
   gap: 28px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--white);
-  font-size: 1.02rem;
+  font-size: 1.125rem;
 }
 
 .capability-list span {
   color: var(--amber);
-  font-size: 0.7rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -568,7 +577,7 @@ main:focus {
   top: 22px;
   left: 24px;
   color: var(--amber-deep);
-  font-size: 0.68rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -614,7 +623,7 @@ main:focus {
   padding: 8px 14px;
   background: var(--white);
   color: var(--charcoal);
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   font-weight: 600;
 }
 
@@ -679,12 +688,12 @@ main:focus {
   max-width: 370px;
   margin-bottom: 18px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.975rem;
 }
 
 .footer-heading {
   margin-bottom: 20px;
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -703,13 +712,13 @@ main:focus {
 .site-footer nav a,
 .footer-bottom a {
   color: var(--charcoal);
-  font-size: 0.88rem;
+  font-size: 0.975rem;
   text-underline-offset: 4px;
 }
 
 .footer-unavailable {
   color: rgba(38, 48, 59, 0.48);
-  font-size: 0.88rem;
+  font-size: 0.975rem;
 }
 
 .footer-bottom {
@@ -718,7 +727,7 @@ main:focus {
   justify-content: space-between;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--type-small);
 }
 
 .footer-bottom p {
@@ -757,14 +766,15 @@ main:focus {
 .inner-hero h1 {
   max-width: 610px;
   margin-bottom: 26px;
-  font-size: clamp(3rem, 4vw, 3.5rem);
+  font-size: clamp(2.875rem, 3.8vw, 3.25rem);
 }
 
 .inner-hero-intro {
   max-width: 580px;
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 1.125rem;
+  line-height: 1.68;
 }
 
 .inner-hero-media {
@@ -794,7 +804,7 @@ main:focus {
   right: 24px;
   bottom: 22px;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 0.68rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -844,7 +854,7 @@ main:focus {
 }
 
 .value-card {
-  min-height: 270px;
+  min-height: 285px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 30px;
@@ -856,7 +866,7 @@ main:focus {
   display: block;
   margin-bottom: 64px;
   color: var(--amber-deep);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -950,7 +960,7 @@ main:focus {
 .process-number,
 .partner-card > span {
   color: var(--amber-deep);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -1002,7 +1012,7 @@ main:focus {
 }
 
 .partner-card {
-  min-height: 390px;
+  min-height: 420px;
   border: 1px solid var(--border);
   padding: 30px;
   background: var(--cream);
@@ -1026,7 +1036,8 @@ main:focus {
 .partner-card p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--type-card);
+  line-height: 1.65;
 }
 
 .conversation-grid {
@@ -1072,7 +1083,7 @@ main:focus {
 }
 
 .leadership-priority {
-  min-height: 320px;
+  min-height: 340px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 30px;
@@ -1083,7 +1094,7 @@ main:focus {
   display: block;
   margin-bottom: 72px;
   color: var(--amber-deep);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -1095,7 +1106,8 @@ main:focus {
 .leadership-priority p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--type-card);
+  line-height: 1.65;
 }
 
 .director-card {
@@ -1166,7 +1178,7 @@ main:focus {
 }
 
 .director-biography-body aside h2 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   letter-spacing: 0;
 }
 
@@ -1218,7 +1230,7 @@ main:focus {
   padding: 6px 9px;
   background: rgba(20, 34, 48, 0.76);
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.66rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1235,7 +1247,7 @@ main:focus {
 .principle-number {
   margin-bottom: 28px;
   color: var(--amber-deep);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -1283,7 +1295,7 @@ main:focus {
   display: block;
   margin-bottom: 74px;
   color: var(--amber-deep);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -1295,7 +1307,8 @@ main:focus {
 .responsibility-principle p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--type-card);
+  line-height: 1.65;
 }
 
 .contact-overview-grid {
@@ -1323,7 +1336,7 @@ main:focus {
 
 .verified-contact-details dt {
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1374,7 +1387,7 @@ main:focus {
   border-radius: 100px;
   padding: 7px 12px;
   color: var(--amber-deep);
-  font-size: 0.75rem;
+  font-size: var(--type-small);
   font-weight: 600;
 }
 
@@ -1403,14 +1416,14 @@ main:focus {
   display: block;
   margin-bottom: 8px;
   color: var(--charcoal);
-  font-size: 0.82rem;
+  font-size: var(--type-small);
   font-weight: 700;
 }
 
 .optional-label {
   margin-left: 6px;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 500;
 }
 
@@ -1423,7 +1436,7 @@ main:focus {
   padding: 12px 13px;
   background: var(--off-white);
   color: var(--charcoal);
-  font-size: 0.95rem;
+  font-size: 1.0625rem;
   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
@@ -1456,7 +1469,7 @@ main:focus {
 .field-error {
   display: block;
   margin-top: 7px;
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   line-height: 1.45;
 }
 
@@ -1477,7 +1490,7 @@ main:focus {
   gap: 11px;
   color: var(--muted);
   cursor: pointer;
-  font-size: 0.83rem;
+  font-size: 0.9375rem;
 }
 
 .privacy-check input {
@@ -1502,7 +1515,7 @@ main:focus {
 .form-actions p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--type-small);
 }
 
 .enquiry-form .button:disabled {
@@ -1565,7 +1578,7 @@ main:focus {
     gap: 12px;
     cursor: pointer;
     list-style: none;
-    font-size: 0.82rem;
+    font-size: 1rem;
     font-weight: 600;
   }
 
@@ -1618,7 +1631,7 @@ main:focus {
     min-height: 52px;
     align-items: center;
     border-bottom: 1px solid var(--border);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     font-weight: 500;
     text-decoration: none;
   }
@@ -1629,7 +1642,7 @@ main:focus {
     align-items: center;
     border-bottom: 1px solid var(--border);
     color: rgba(38, 48, 59, 0.48);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     font-weight: 500;
   }
 
@@ -1662,24 +1675,26 @@ main:focus {
 }
 
 @media (max-width: 800px) {
+  :root {
+    --type-body: 17px;
+    --type-nav: 1.0625rem;
+    --type-card: 1.0625rem;
+  }
+
   html {
     scroll-padding-top: 76px;
   }
 
-  body {
-    font-size: 16px;
-  }
-
   h1 {
-    font-size: clamp(2.25rem, 10vw, 2.5rem);
+    font-size: clamp(2.375rem, 10vw, 2.625rem);
   }
 
   h2 {
-    font-size: clamp(1.75rem, 8vw, 2rem);
+    font-size: clamp(1.875rem, 8vw, 2.125rem);
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: clamp(1.3125rem, 5.5vw, 1.5rem);
   }
 
   .container {
@@ -1739,7 +1754,7 @@ main:focus {
   .hero-intro {
     max-width: 540px;
     margin-bottom: 28px;
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .hero-index {
@@ -1807,7 +1822,7 @@ main:focus {
   }
 
   .inner-hero h1 {
-    font-size: clamp(2.25rem, 9vw, 2.75rem);
+    font-size: clamp(2.125rem, 9vw, 2.375rem);
   }
 
   .inner-hero-media {
@@ -1980,7 +1995,7 @@ main:focus {
   }
 
   .lead {
-    font-size: 1.08rem;
+    font-size: 1.125rem;
   }
 
   .focus-card {
@@ -2024,7 +2039,7 @@ main:focus {
   }
 
   .inner-hero-intro {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .focus-detail {
