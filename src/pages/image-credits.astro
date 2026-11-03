@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import imageManifest from '../data/image-manifest.json';
+
+const imageCredits = imageManifest.map((image) => ({
+  ...image,
+  photographer:
+    image.photographer === 'Unsplash contributor' || image.photographer.startsWith('Uncredited')
+      ? undefined
+      : image.photographer,
+}));
+---
+
+<BaseLayout
+  title="Image Credits | Dawn Oil Limited"
+  description="Photograph sources and licence information for images used on the Dawn Oil website."
+>
+  <section class="section section-cream image-credits-section" aria-labelledby="image-credits-title">
+    <div class="container">
+      <div class="image-credits-intro">
+        <p class="eyebrow">Image credits</p>
+        <h1 id="image-credits-title">Photograph sources</h1>
+        <p class="lead">Sources and licence information for photographs used across this website.</p>
+      </div>
+
+      <ul class="image-credits-list">
+        {imageCredits.map((image) => (
+          <li>
+            <article class="image-credit">
+              <h2>{image.description}</h2>
+              <dl>
+                {image.photographer && (
+                  <div>
+                    <dt>Photographer</dt>
+                    <dd>{image.photographer}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>Source</dt>
+                  <dd>
+                    {image.sourceUrl ? (
+                      <a href={image.sourceUrl}>{image.creditSource}</a>
+                    ) : (
+                      image.creditSource
+                    )}
+                  </dd>
+                </div>
+                {image.creditLicense && (
+                  <div>
+                    <dt>Licence</dt>
+                    <dd>
+                      {image.licenseUrl ? (
+                        <a href={image.licenseUrl}>{image.creditLicense}</a>
+                      ) : (
+                        image.creditLicense
+                      )}
+                      {image.id === 'capabilities-field-context' && ' (image cropped for page layout)'}
+                    </dd>
+                  </div>
+                )}
+              </dl>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -24,8 +24,9 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 4. Confirm whether optional gas investment focus should be published.
 5. Approve any named partner description (Waltersmith etc.); otherwise omit entirely.
 6. Choose website enquiry implementation: managed form-to-email or direct verified mailbox; privacy responsibility and data retention.
-7. Confirm ownership/licensing of supplied platform photo and approved image library, if any.
-8. Confirm whether Dawn requires non-technical content editing access; user prefers no backend but original Dawn brief requested CMS. Default to static until resolved.
+7. RELEASE BLOCKER: confirm the original creator/source and production-use permission for the client-directed homepage pumpjack image. Its Dawn source record says it was previously used as an Aureum hero; do not infer exclusive use or current Aureum deployment from Dawn records.
+8. Recover and verify the individual Unsplash source records for the Partnerships and Contact hero photographs; the retained register has no item-level photographer/source links.
+9. Confirm whether Dawn requires non-technical content editing access; user prefers no backend but original Dawn brief requested CMS. Default to static until resolved.
 
 ## Phase 2D leadership publication status
 - The five profiles supplied in `Dawn Oil LImited - Corporate Bios.pdf` have been integrated into the Leadership route and individual biography routes for client review.
