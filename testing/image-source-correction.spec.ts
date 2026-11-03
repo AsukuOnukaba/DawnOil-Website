@@ -2,12 +2,12 @@ import { expect, test } from '@playwright/test';
 import path from 'node:path';
 
 const innerPages = [
-  { route: '/about', slug: 'about', image: '/assets/hero/dawn-brief-pumpjack.webp' },
+  { route: '/about', slug: 'about', image: '/assets/editorial/bright-meeting-room.webp' },
   { route: '/our-focus', slug: 'our-focus', image: '/assets/hero/dawn-brief-pumpjack.webp' },
-  { route: '/capabilities', slug: 'capabilities', image: '/assets/hero/dawn-brief-pumpjack.webp' },
-  { route: '/partnerships', slug: 'partnerships', image: '/assets/hero/dawn-brief-pumpjack.webp' },
+  { route: '/capabilities', slug: 'capabilities', image: '/assets/editorial/capabilities-oilfield.jpg' },
+  { route: '/partnerships', slug: 'partnerships', image: '/assets/editorial/partnerships-strategy.webp' },
   { route: '/responsibility', slug: 'responsibility', image: '/assets/editorial/ghana-mangrove-waterway.webp' },
-  { route: '/contact', slug: 'contact', image: '/assets/hero/dawn-brief-pumpjack.webp' },
+  { route: '/contact', slug: 'contact', image: '/assets/editorial/contact-business-meeting.webp' },
 ] as const;
 
 test('homepage uses the client-directed upstream pumpjack hero with a stable responsive crop', async ({ page }, testInfo) => {
@@ -46,6 +46,8 @@ for (const pageConfig of innerPages) {
     const image = page.locator('.inner-hero-media img');
     await expect(image).toHaveAttribute('src', pageConfig.image);
     await expect(image).toHaveAttribute('alt', /\S+/);
+    expect(await image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
+    expect(await image.evaluate((element: HTMLImageElement) => element.currentSrc)).toContain(pageConfig.image);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)).toBe(false);
     expect(consoleErrors).toEqual([]);
 

@@ -19,3 +19,8 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 10. Sections, UI and motion must match approved light cream/amber direction with balanced type. No enormous uppercase headlines, distracting orange blocks, dark-heavy backgrounds, noisy animations or inaccessible contrast.
 11. Tests proportional to edits; one-page changes only need local route/visual tests. Run full regression before public deployment. Do not change unrelated files or deploy without approval.
 12. Stop after task; concise list of files changed, tests run and unresolved gaps.
+
+## Image validation and duplication guardrails
+- Keep the homepage hero on `public/assets/hero/dawn-upstream-pumpjack.jpg` and do not reintroduce the older offshore-platform imagery on Dawn pages.
+- Use one distinct editorial image per placement; avoid reusing the same photo across different sections or pages.
+- Keep project image assignments recorded in `src/data/image-manifest.json` and validate with `npm run validate:images` before review or build handoff.

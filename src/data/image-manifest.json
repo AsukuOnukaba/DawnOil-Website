@@ -1,0 +1,102 @@
+[
+  {
+    "id": "home-pumpjack",
+    "page": "home",
+    "section": "hero",
+    "filename": "/assets/hero/dawn-upstream-pumpjack.jpg",
+    "source": "Former Aureum homepage hero reassigned to Dawn by client",
+    "photographer": "Uncredited client-supplied asset",
+    "license": "Client-supplied image; production-use provenance requires confirmation",
+    "notes": "Homepage hero only; no facility-ownership claim."
+  },
+  {
+    "id": "about-business-review",
+    "page": "/about",
+    "section": "hero",
+    "filename": "/assets/editorial/bright-meeting-room.webp",
+    "source": "Unsplash",
+    "photographer": "Darshan Patel",
+    "license": "Unsplash licence",
+    "notes": "Generic business-meeting image; not a Dawn office."
+  },
+  {
+    "id": "focus-upstream-context",
+    "page": "/our-focus",
+    "section": "hero",
+    "filename": "/assets/hero/dawn-brief-pumpjack.webp",
+    "source": "Unsplash, embedded in project source brief",
+    "photographer": "Zbynek Burival",
+    "license": "Unsplash licence",
+    "notes": "Retained for one selected inner-page banner only."
+  },
+  {
+    "id": "capabilities-field-context",
+    "page": "/capabilities",
+    "section": "hero",
+    "filename": "/assets/editorial/capabilities-oilfield.jpg",
+    "source": "Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Pumpjacks_on_Leduc-Woodbend_Oilfield.JPG",
+    "photographer": "Jeffery J. Nichols",
+    "license": "CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/",
+    "notes": "Pumpjack landscape in the Leduc-Woodbend Oilfield; representative industry context, not a Dawn asset."
+  },
+  {
+    "id": "leadership-boardroom",
+    "page": "/leadership",
+    "section": "hero",
+    "filename": "/assets/editorial/leadership-boardroom.webp",
+    "source": "Unsplash",
+    "photographer": "Jakub Żerdzicki",
+    "license": "Unsplash licence",
+    "notes": "Generic empty boardroom; not a Dawn office."
+  },
+  {
+    "id": "partnerships-strategy",
+    "page": "/partnerships",
+    "section": "hero",
+    "filename": "/assets/editorial/partnerships-strategy.webp",
+    "source": "Unsplash",
+    "photographer": "Unsplash contributor",
+    "license": "Unsplash licence",
+    "notes": "Partnership and commercial discussion context."
+  },
+  {
+    "id": "responsibility-landscape",
+    "page": "/responsibility",
+    "section": "hero",
+    "filename": "/assets/editorial/ghana-mangrove-waterway.webp",
+    "source": "Unsplash",
+    "photographer": "Ato Aikins",
+    "license": "Unsplash licence",
+    "notes": "Responsible-business landscape; geographic context only."
+  },
+  {
+    "id": "responsibility-safety",
+    "page": "/responsibility",
+    "section": "feature",
+    "filename": "/assets/editorial/industrial-safety-inspection.webp",
+    "source": "Unsplash",
+    "photographer": "Ümit Yıldırım",
+    "license": "Unsplash licence",
+    "notes": "Safety and operational responsibility."
+  },
+  {
+    "id": "contact-hero",
+    "page": "/contact",
+    "section": "hero",
+    "filename": "/assets/editorial/contact-business-meeting.webp",
+    "source": "Unsplash",
+    "photographer": "Unsplash contributor",
+    "license": "Unsplash licence",
+    "notes": "Business enquiry hero; generic commercial discussion context."
+  },
+  {
+    "id": "contact-context",
+    "page": "/contact",
+    "section": "supporting",
+    "filename": "/assets/editorial/lagos-cityscape.webp",
+    "source": "Unsplash",
+    "photographer": "Emmanuel Ikwuegbu",
+    "license": "Unsplash licence",
+    "notes": "Factual Lagos context only."
+  }
+]
