@@ -1,7 +1,7 @@
 # Dawn Oil Limited — AI Website Development Documentation v1.0
 Status: **draft for developer implementation and management review**, not publication approval. 31 October 2026.
 
-Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 supersede visual directions and confirm the supplied official logo and offshore-platform hero image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
+Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** user instruction 3 Nov 2026 supersedes the earlier hero direction and selects the S1 pumpjack image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
 
 Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, assets, product categories, marketing copy, palette or services. Both client projects run concurrently but remain separate repositories and documentation.
 
@@ -20,7 +20,8 @@ Reference sites use cinematic/feature-led imagery and media modules, but **no ve
 | Asset | Local file | Use | Caveat |
 |---|---|---|---|
 | Dawn Oil logo | `assets/brand/DawnOil_Logo_Supplied.png` | Header/footer/favicon derivative only with care | Artwork unmodified; verify crop/background/legibility |
-| Offshore platform at dusk | `assets/hero/DawnOil_Offshore_Platform_Hero.png` | Main homepage hero | Industry-context image; ownership/licence should be confirmed; not identified as Dawn platform |
+| Pumpjack at sunset (S1 embedded `word/media/image1.jpg`) | `public/assets/hero/dawn-brief-pumpjack.jpg` | Main homepage hero and selected inner-page banners | Zbynek Burival / Unsplash; representative industry context, not identified as a Dawn asset |
+| Offshore platform at dusk | `assets/hero/DawnOil_Offshore_Platform_Hero.png` | Retained source asset; superseded as active hero on 3 November 2026 | Industry-context image; ownership/licence should be confirmed; not identified as Dawn platform |
 
 ## Suggested additional image directions
 - Professional upstream commercial meeting with diverse team reviewing non-sensitive documents (About/Capabilities).
@@ -33,7 +34,7 @@ Reference sites use cinematic/feature-led imagery and media modules, but **no ve
 ## Attribution register template
 | ID | File | Photographer/source | Licence proof | Usage restrictions | Approved? |
 |---|---|---|---|---|---|
-| A01 | supplied hero (+ visually faithful WebP derivatives) | developer-supplied | verify provenance | no facility ownership claim | pending provenance |
+| A01 | supplied offshore-platform hero (+ WebP derivatives) | developer-supplied | verify provenance | superseded for current Dawn use; no facility ownership claim | retained, inactive |
 | A02 | logo (+ 248px visually faithful WebP derivative) | user-supplied brand | corporate artwork | no redraw/recolour | supplied official |
 | A03 | `public/assets/editorial/industrial-pipework.jpg` (+ WebP derivatives) | Ricardo Gomez Angel / Unsplash, S1 reference B | https://unsplash.com/license; https://unsplash.com/photos/41X6FwTwPh4 | generic industrial detail; do not present as a Dawn facility | source-recorded |
 | A04 | `public/assets/editorial/offshore-infrastructure.jpg` (+ WebP derivatives) | Leonardo Benitez / Unsplash, S1 reference A | https://unsplash.com/license; https://unsplash.com/photos/F8fYuNwHvHU | industry context only; do not present as a Dawn asset | source-recorded |
@@ -42,3 +43,4 @@ Reference sites use cinematic/feature-led imagery and media modules, but **no ve
 | A07 | `public/assets/editorial/bright-meeting-room.webp` (+ 900px derivative) | Darshan Patel / Unsplash | https://unsplash.com/license; https://unsplash.com/photos/DfzzpBRZCT0 | Contact hero; generic business lounge, not a Dawn office | source-recorded |
 | A08 | `public/assets/editorial/lagos-cityscape.webp` (+ 900px derivative) | Emmanuel Ikwuegbu / Unsplash | https://unsplash.com/license; https://unsplash.com/photos/foXolHDZPeU | Contact supporting image; factual Lagos context only | source-recorded |
 | A09 | `public/assets/editorial/leadership-boardroom.webp` (+ 900px derivative) | Jakub Żerdzicki / Unsplash | https://unsplash.com/license; https://unsplash.com/photos/Jrq1Bmb2Mmk | Leadership hero; generic empty boardroom, not a Dawn office | source-recorded |
+| A10 | `public/assets/hero/dawn-brief-pumpjack.jpg` (+ WebP derivatives) | Zbynek Burival / Unsplash; embedded as S1 `word/media/image1.jpg` | https://unsplash.com/license; https://unsplash.com/photos/GrmwVnVSSdU | Primary Dawn hero direction from 3 November 2026; representative context only | client-directed |

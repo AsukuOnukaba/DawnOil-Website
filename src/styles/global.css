@@ -265,8 +265,8 @@ main:focus {
 }
 
 .hero-media {
-  background-image: url('/assets/hero/dawn-oil-offshore-platform.webp');
-  background-position: 68% center;
+  background-image: url('/assets/hero/dawn-brief-pumpjack.webp');
+  background-position: 67% center;
   background-size: cover;
   transform: scale(1.01);
   animation: hero-settle 1.2s var(--ease) both;

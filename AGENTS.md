@@ -1,7 +1,7 @@
 # Dawn Oil Limited — AI Website Development Documentation v1.0
-Status: **draft for developer implementation and management review**, not publication approval. 31 October 2026.
+Status: **draft for developer implementation and management review**, not publication approval. Updated 3 November 2026.
 
-Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 supersede visual directions and confirm the supplied official logo and offshore-platform hero image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
+Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** user instruction 3 Nov 2026 supersedes the earlier hero direction and selects the S1 pumpjack image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
 
 Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, assets, product categories, marketing copy, palette or services. Both client projects run concurrently but remain separate repositories and documentation.
 
@@ -12,7 +12,7 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 3. S1 original Dawn website brief is business ground truth. U1 updated image/logo/light palette overrides older branding suggestions, but does not authorise new services or claims.
 4. Before development, report concise readiness and homepage proposal. The developer must explicitly authorise coding. Start with homepage and ONE chosen inner-page design, not eight implemented pages in one run.
 5. Keep output static by default; no custom backend/database. The original brief's CMS/form requests are unresolved, so log divergence and do not invent form endpoints.
-6. Preserve provided logo and offshore hero exactly; optimise derivatives only for web, with visually faithful output and original retained. Never claim offshore platform is owned/operated by Dawn.
+6. Preserve the provided logo unchanged. Use the pumpjack photograph embedded as `word/media/image1.jpg` in S1 as the primary Dawn hero direction, with visually faithful web derivatives and the original retained. Treat all document industry images as representative context; never claim a pictured facility is owned or operated by Dawn.
 7. Adapt **design principles** from Atlas, Renaissance and Chevron, not copyrighted code, logos, text or competitor images. No fabricated video assets.
 8. Public text must be polished customer-facing business copy. NEVER publish internal commentary, approval-status notices, 'source says', preview disclaimers, developer notes or irrelevant negative assertions about what Dawn does not do.
 9. Track genuinely unresolved company facts under `questions_for_ceo/`. Ask developer first; never assume. Omit unsupported public content; no fake contacts, fake people or fake achievements.
