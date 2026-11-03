@@ -12,7 +12,7 @@ Dawn Oil is an upstream **investment and commercial opportunity** business; cred
 ## Locked and proposed assets
 - **Official supplied artwork:** `assets/brand/DawnOil_Logo_Supplied.png` (1240×981 RGBA source image). Keep exact artwork, no recolouring, cropping of letters, tracing or AI replacement. Inspect its apparent background on both cream and dark areas; adjust the **container background**, not the logo.
 - **Primary hero (clarified 3 November 2026):** `public/assets/hero/dawn-upstream-pumpjack.png` (1913×1341), the former Aureum pumpjack/crane image reassigned by the client to Dawn. Use as representative upstream-industry context, never as a Dawn-owned or operated facility. Preserve a readable text field in the existing responsive crop.
-- The former Dawn offshore-platform photograph is superseded for Dawn’s homepage, designated as Aureum Energy’s homepage hero, and may be reused on Dawn inner pages as clean upstream context.
+- Offshore-platform imagery is excluded from Dawn Oil. The former Dawn platform photograph is designated for Aureum Energy and must not be reused on Dawn inner pages.
 
 ## Colour direction — requested by client
 - Main canvas: warm cream `#F7F1E6` (proposed), off-white `#FFFDF9` (proposed), white `#FFFFFF`.
@@ -33,7 +33,7 @@ Dawn Oil is an upstream **investment and commercial opportunity** business; cred
 
 ## Image art direction beyond hero
 - About: professional Nigerian business meeting/energy-industry planning context, without logos, sensitive documents or implied actual staff.
-- Focus: high-quality offshore industrial infrastructure **as sector context**; energy landscape; clear asset opportunity maps only if abstract and not identifying Dawn holdings.
+- Focus: clean pumpjack/extraction imagery **as sector context**; energy landscape; clear asset opportunity maps only if abstract and not identifying Dawn holdings.
 - Capabilities: boardroom document review, contract/planning imagery, technical/commercial discussion (not welding rigs as a Dawn service).
 - Leadership: genuine supplied director portraits, never stock stand-ins for named people.
 - Partnerships: hands reviewing project documents or industrial landscape; no competitor or unapproved partner logos.

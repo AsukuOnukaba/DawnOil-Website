@@ -25,7 +25,7 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 ## Decisions already made
 - Initial plan = eight core pages: Home, About, Our Focus, Capabilities, Leadership, Partnerships, Responsibility, Contact.
 - The owner requests **cream + amber**, gentle white areas, restrained typography, modest animation, realistic imagery; no dark-heavy designs or massive headings.
-- The 3 November 2026 client correction supersedes the earlier hero instruction: use S1 embedded `word/media/image1.jpg`, the pumpjack at sunset, as Dawn’s homepage hero. The former Dawn offshore-platform photograph is designated as Aureum Energy’s homepage hero and may support Dawn inner pages, but must not return to Dawn’s homepage.
+- The 3 November 2026 client correction supersedes the earlier hero instruction: use the former Aureum pumpjack/crane image as Dawn’s homepage hero. Offshore-platform imagery is excluded from all Dawn pages and belongs to Aureum Energy’s visual direction.
 - Never use rusted, damaged, worn, poor-condition or low-quality industrial imagery on either project. Dawn imagery must emphasise upstream exploration/production; Aureum imagery must emphasise oil services, procurement and equipment support.
 - `assets/brand/DawnOil_Logo_Supplied.png` is the supplied brand artwork. Never redraw or recolour. Check actual alpha/contrast before placing it.
 - Use external reference sites for layout and UX only, never as evidence of Dawn assets, activities or partnerships.

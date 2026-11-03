@@ -2,11 +2,11 @@ import { expect, test } from '@playwright/test';
 import path from 'node:path';
 
 const innerPages = [
-  { route: '/about', slug: 'about', image: '/assets/hero/dawn-oil-offshore-platform.webp' },
+  { route: '/about', slug: 'about', image: '/assets/hero/dawn-brief-pumpjack.webp' },
   { route: '/our-focus', slug: 'our-focus', image: '/assets/hero/dawn-brief-pumpjack.webp' },
-  { route: '/capabilities', slug: 'capabilities', image: '/assets/hero/dawn-oil-offshore-platform.webp' },
-  { route: '/partnerships', slug: 'partnerships', image: '/assets/hero/dawn-oil-offshore-platform.webp' },
-  { route: '/responsibility', slug: 'responsibility', image: '/assets/hero/dawn-oil-offshore-platform.webp' },
+  { route: '/capabilities', slug: 'capabilities', image: '/assets/hero/dawn-brief-pumpjack.webp' },
+  { route: '/partnerships', slug: 'partnerships', image: '/assets/hero/dawn-brief-pumpjack.webp' },
+  { route: '/responsibility', slug: 'responsibility', image: '/assets/editorial/ghana-mangrove-waterway.webp' },
   { route: '/contact', slug: 'contact', image: '/assets/hero/dawn-brief-pumpjack.webp' },
 ] as const;
 
@@ -56,3 +56,11 @@ for (const pageConfig of innerPages) {
     });
   });
 }
+
+test('no Dawn page renders or references an offshore platform image', async ({ page }) => {
+  for (const route of ['/', '/about', '/our-focus', '/capabilities', '/leadership', '/partnerships', '/responsibility', '/contact']) {
+    const response = await page.goto(route, { waitUntil: 'load' });
+    expect(response?.status()).toBe(200);
+    expect((await page.locator('body').innerHTML()).toLowerCase()).not.toContain('offshore-platform');
+  }
+});

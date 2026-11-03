@@ -14,7 +14,7 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 | Chevron | https://www.chevron.com/ | Featured image-led editorial storytelling; who-we-are / what-we-do; people, sustainability and news; modular content | Identity/capabilities narrative, restrained image transitions, leadership credibility | Named facilities, customers, production, climate targets, claims, logos |
 
 ### Video policy
-Reference sites use cinematic/feature-led imagery and media modules, but **no verified Dawn footage is supplied**. Use the supplied platform still as the hero. Do not fabricate a hero video or auto-play generic video pretending to represent Dawn. If owner supplies licensed footage later, offer optional silent muted loop with poster image, pause control, reduced-motion fallback and no autoplay sound.
+Reference sites use cinematic/feature-led imagery and media modules, but **no verified Dawn footage is supplied**. Use the client-directed pumpjack still as the hero. Do not fabricate a hero video or auto-play generic video pretending to represent Dawn. If owner supplies licensed footage later, offer an optional silent muted loop with a pumpjack/extraction poster image, pause control, reduced-motion fallback and no autoplay sound.
 
 ## User-supplied assets
 | Asset | Local file | Use | Caveat |
@@ -22,12 +22,12 @@ Reference sites use cinematic/feature-led imagery and media modules, but **no ve
 | Dawn Oil logo | `assets/brand/DawnOil_Logo_Supplied.png` | Header/footer/favicon derivative only with care | Artwork unmodified; verify crop/background/legibility |
 | Pumpjack field (former Aureum hero, reassigned by client) | `public/assets/hero/dawn-upstream-pumpjack.png` | Main homepage hero | Client-supplied asset; original creator/licence metadata not identified; representative industry context, not identified as a Dawn asset |
 | Pumpjack at sunset (S1 embedded `word/media/image1.jpg`) | `public/assets/hero/dawn-brief-pumpjack.jpg` | Retained for selected inner-page banners | Zbynek Burival / Unsplash; representative industry context, not identified as a Dawn asset |
-| Offshore platform at dusk | `assets/hero/DawnOil_Offshore_Platform_Hero.png` | Aureum homepage hero; may support Dawn inner pages but not Dawn homepage | Industry-context image; ownership/licence should be confirmed; not identified as either company’s platform |
+| Offshore platform at dusk | Removed from Dawn public assets | Aureum Energy only | Must not be used on Dawn pages |
 
 ## Suggested additional image directions
 - Professional upstream commercial meeting with diverse team reviewing non-sensitive documents (About/Capabilities).
 - Wide neutral energy infrastructure landscape (Focus); avoid named assets.
-- An editorial close-up of offshore rig geometry with natural light (supporting visual, not second hero).
+- An editorial close-up of clean pumpjack or extraction geometry with natural light.
 - Genuine management headshots for Leadership only after supplied/approved.
 - Nature/landscape aerial and responsible site operations (Responsibility), never as Dawn programme evidence.
 - Use licensed photographers/stock with rights documented; don't fetch and publish arbitrary Google Images or competitor photos.
@@ -35,7 +35,7 @@ Reference sites use cinematic/feature-led imagery and media modules, but **no ve
 ## Attribution register template
 | ID | File | Photographer/source | Licence proof | Usage restrictions | Approved? |
 |---|---|---|---|---|---|
-| A01 | supplied offshore-platform hero (+ WebP derivatives) | developer-supplied | verify provenance | Aureum homepage hero; permitted on Dawn inner pages only; no facility ownership claim | client-directed |
+| A01 | former offshore-platform hero (+ derivatives) | developer-supplied | verify provenance | Removed from Dawn public assets; Aureum Energy only | excluded from Dawn |
 | A02 | logo (+ 248px visually faithful WebP derivative) | user-supplied brand | corporate artwork | no redraw/recolour | supplied official |
 | A03 | `public/assets/editorial/industrial-pipework.jpg` (+ WebP derivatives) | Ricardo Gomez Angel / Unsplash, S1 reference B | https://unsplash.com/license; https://unsplash.com/photos/41X6FwTwPh4 | retained in archive; removed from active Dawn hero use because it reads as equipment/services support | inactive |
 | A04 | `public/assets/editorial/offshore-infrastructure.jpg` (+ WebP derivatives) | Leonardo Benitez / Unsplash, S1 reference A | https://unsplash.com/license; https://unsplash.com/photos/F8fYuNwHvHU | retained in archive; removed from active use because the source appears soft and weathered | inactive |
