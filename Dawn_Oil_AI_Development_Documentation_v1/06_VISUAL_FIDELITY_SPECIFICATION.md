@@ -1,13 +1,13 @@
 # Dawn Oil Limited — AI Website Development Documentation v1.0
 Status: **draft for developer implementation and management review**, not publication approval. 31 October 2026.
 
-Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** user instruction 3 Nov 2026 supersedes the earlier hero direction and selects the S1 pumpjack image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
+Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** and **U3** user instructions on 3 Nov 2026 clarify project-specific image direction, with U3 selecting the former Aureum pumpjack/crane image for Dawn's homepage hero; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
 
 Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, assets, product categories, marketing copy, palette or services. Both client projects run concurrently but remain separate repositories and documentation.
 
 
 ## Exact visual hierarchy to preserve
-1. **Hero from S1 document image 1** — crop the pumpjack at right with the sunset providing a darkened text field on the left. Use a contrast overlay for the short white headline and do not imply the pictured equipment is owned or operated by Dawn.
+1. **Client-directed former Aureum pumpjack/crane image** — use the existing responsive crop and contrast overlay for the short white headline; do not imply the pictured equipment is owned or operated by Dawn.
 2. Calm white/cream navigation, official supplied logo, eight legible individual items or responsibly responsive desktop hierarchy **only if necessary**; never invent a grouped menu without developer approval. Primary Contact prominent but not a huge orange block.
 3. Alternating cream/white/very pale amber content bands; balanced image-and-copy blocks, leadership imagery only approved real portraits.
 4. Editorial cues from Renaissance and Chevron: well-spaced headline/image sequences, leadership previews, values/responsibility sections. Commercial clarity from Atlas: focus/service pathways, repeat Contact CTA. Do not inherit competitor data or claims.

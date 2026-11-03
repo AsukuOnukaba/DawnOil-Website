@@ -1,7 +1,7 @@
 # Dawn Oil Limited — AI Website Development Documentation v1.0
 Status: **draft for developer implementation and management review**, not publication approval. 31 October 2026.
 
-Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** user instruction 3 Nov 2026 supersedes the earlier hero direction and selects the S1 pumpjack image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
+Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** and **U3** user instructions on 3 Nov 2026 clarify project-specific image direction, with U3 selecting the former Aureum pumpjack/crane image for Dawn's homepage hero; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
 
 Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, assets, product categories, marketing copy, palette or services. Both client projects run concurrently but remain separate repositories and documentation.
 
@@ -25,7 +25,8 @@ Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, as
 ## Decisions already made
 - Initial plan = eight core pages: Home, About, Our Focus, Capabilities, Leadership, Partnerships, Responsibility, Contact.
 - The owner requests **cream + amber**, gentle white areas, restrained typography, modest animation, realistic imagery; no dark-heavy designs or massive headings.
-- The 3 November 2026 client correction supersedes the earlier hero instruction: use S1 embedded `word/media/image1.jpg`, the pumpjack at sunset, as the primary Dawn homepage hero direction. The separately supplied offshore-platform photograph is no longer the active hero.
+- The 3 November 2026 client correction supersedes the earlier hero instruction: use S1 embedded `word/media/image1.jpg`, the pumpjack at sunset, as Dawn’s homepage hero. The former Dawn offshore-platform photograph is designated as Aureum Energy’s homepage hero and may support Dawn inner pages, but must not return to Dawn’s homepage.
+- Never use rusted, damaged, worn, poor-condition or low-quality industrial imagery on either project. Dawn imagery must emphasise upstream exploration/production; Aureum imagery must emphasise oil services, procurement and equipment support.
 - `assets/brand/DawnOil_Logo_Supplied.png` is the supplied brand artwork. Never redraw or recolour. Check actual alpha/contrast before placing it.
 - Use external reference sites for layout and UX only, never as evidence of Dawn assets, activities or partnerships.
 - Aim for static Astro output; no custom backend/database. This is a recommended technical assumption pending environment checks, not a claim that all contact requirements are resolved.

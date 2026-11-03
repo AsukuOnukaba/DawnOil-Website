@@ -1,7 +1,7 @@
 # Dawn Oil Limited — AI Website Development Documentation v1.0
 Status: **draft for developer implementation and management review**, not publication approval. 31 October 2026.
 
-Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** user instruction 3 Nov 2026 supersedes the earlier hero direction and selects the S1 pumpjack image; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
+Source hierarchy: **S1** `Dawn_Oil_Website_Development_Brief.docx` (original 18 pages, 21 Oct 2026) is the governing business-content and sitemap source; **U1** user instructions 30–31 Oct 2026 confirm the supplied official logo and lighter palette; **U2** and **U3** user instructions on 3 Nov 2026 clarify project-specific image direction, with U3 selecting the former Aureum pumpjack/crane image for Dawn's homepage hero; **R1–R3** external websites are inspiration only. Earlier generated proposal and developer plan are secondary interpretation, not independent facts. No unsupported claims should reach a public build.
 
 Project boundary: **DAWN OIL ONLY**. Never import Aureum materials, branding, assets, product categories, marketing copy, palette or services. Both client projects run concurrently but remain separate repositories and documentation.
 
@@ -11,8 +11,8 @@ Dawn Oil is an upstream **investment and commercial opportunity** business; cred
 
 ## Locked and proposed assets
 - **Official supplied artwork:** `assets/brand/DawnOil_Logo_Supplied.png` (1240×981 RGBA source image). Keep exact artwork, no recolouring, cropping of letters, tracing or AI replacement. Inspect its apparent background on both cream and dark areas; adjust the **container background**, not the logo.
-- **Primary hero (updated 3 November 2026):** S1 embedded `word/media/image1.jpg` (1600×1094), the pumpjack at sunset. Use as representative upstream-industry context, never as a Dawn-owned or operated facility. Crop with the pumpjack to the right and a readable text field on the left.
-- The separately supplied offshore-platform photograph is retained in the asset archive but is superseded for the active Dawn homepage hero.
+- **Primary hero (clarified 3 November 2026):** `public/assets/hero/dawn-upstream-pumpjack.png` (1913×1341), the former Aureum pumpjack/crane image reassigned by the client to Dawn. Use as representative upstream-industry context, never as a Dawn-owned or operated facility. Preserve a readable text field in the existing responsive crop.
+- The former Dawn offshore-platform photograph is superseded for Dawn’s homepage, designated as Aureum Energy’s homepage hero, and may be reused on Dawn inner pages as clean upstream context.
 
 ## Colour direction — requested by client
 - Main canvas: warm cream `#F7F1E6` (proposed), off-white `#FFFDF9` (proposed), white `#FFFFFF`.
@@ -38,4 +38,4 @@ Dawn Oil is an upstream **investment and commercial opportunity** business; cred
 - Leadership: genuine supplied director portraits, never stock stand-ins for named people.
 - Partnerships: hands reviewing project documents or industrial landscape; no competitor or unapproved partner logos.
 - Responsibility: ecological landscape or generic safe-work scene without claimed projects or safety achievements.
-- Avoid unrelated saturated sunset stock, rusty machinery, watermarked stock and competitor-branded photographs. The client-selected S1 pumpjack-at-sunset hero is the approved exception.
+- Avoid unrelated saturated sunset stock, rusted, worn, damaged or poor-condition machinery, watermarked stock and competitor-branded photographs. The client-selected pumpjack hero is the approved upstream image direction.
