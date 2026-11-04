@@ -10,6 +10,7 @@
     "validate:images": "node scripts/validate-image-usage.mjs"
   },
   "dependencies": {
+    "@formspree/ajax": "^1.1.5",
     "astro": "^5.15.5"
   },
   "devDependencies": {

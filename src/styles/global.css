@@ -1650,6 +1650,28 @@ main:focus {
   background: var(--cream);
 }
 
+.form-status[data-state="error"] {
+  border-left-color: #8c3026;
+}
+
+.form-status[data-state="success"] {
+  border-left-color: #36704a;
+}
+
+.form-availability {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: var(--type-small);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .motion-ready [data-reveal] {
   opacity: 0;
   transform: translateY(22px);

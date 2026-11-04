@@ -59,6 +59,8 @@ test('contact query parameters preselect valid enquiry types and submission stay
 
   const form = page.locator('[data-contact-form]');
   expect(await form.getAttribute('action')).toBeNull();
+  await expect(form).toHaveAttribute('data-formspree-enabled', 'false');
+  await expect(page.locator('[data-form-availability]')).toHaveText('Online enquiry submissions are temporarily unavailable.');
   await expect(page.getByRole('button', { name: 'Send enquiry' })).toBeDisabled();
 });
 

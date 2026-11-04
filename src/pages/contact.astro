@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InnerHero from '../components/InnerHero.astro';
+
+const formspreeFormId = import.meta.env.PUBLIC_FORMSPREE_FORM_ID?.trim();
+const formspreeEnabled =
+  import.meta.env.PUBLIC_FORMSPREE_ENABLED === 'true' &&
+  Boolean(formspreeFormId) &&
+  formspreeFormId?.toLowerCase() !== 'your_form_id_here';
+const formspreeAction = formspreeEnabled
+  ? `https://formspree.io/f/${formspreeFormId}`
+  : undefined;
 ---
 
 <BaseLayout
@@ -61,66 +70,86 @@ import InnerHero from '../components/InnerHero.astro';
         </div>
       </div>
 
-      <form class="enquiry-form" data-contact-form novalidate data-reveal>
+      <form
+        id="contact-form"
+        class="enquiry-form"
+        data-contact-form
+        data-formspree-enabled={formspreeEnabled ? 'true' : 'false'}
+        data-formspree-form-id={formspreeEnabled ? formspreeFormId : undefined}
+        action={formspreeAction}
+        method="POST"
+        novalidate
+        data-reveal
+      >
         <div class="form-grid">
           <div class="form-field">
             <label for="full-name">Full name <span aria-hidden="true">*</span></label>
-            <input id="full-name" name="fullName" type="text" autocomplete="name" maxlength="120" required aria-describedby="full-name-error" />
-            <span class="field-error" id="full-name-error" aria-live="polite"></span>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" maxlength="120" required data-fs-field aria-describedby="full-name-error" />
+            <span class="field-error" id="full-name-error" data-fs-error="fullName" aria-live="polite"></span>
           </div>
           <div class="form-field">
             <label for="organisation">Organisation <span aria-hidden="true">*</span></label>
-            <input id="organisation" name="organisation" type="text" autocomplete="organization" maxlength="160" required aria-describedby="organisation-error" />
-            <span class="field-error" id="organisation-error" aria-live="polite"></span>
+            <input id="organisation" name="organisation" type="text" autocomplete="organization" maxlength="160" required data-fs-field aria-describedby="organisation-error" />
+            <span class="field-error" id="organisation-error" data-fs-error="organisation" aria-live="polite"></span>
           </div>
           <div class="form-field">
             <label for="business-email">Business email <span aria-hidden="true">*</span></label>
-            <input id="business-email" name="email" type="email" autocomplete="email" maxlength="180" required aria-describedby="business-email-error" />
-            <span class="field-error" id="business-email-error" aria-live="polite"></span>
+            <input id="business-email" name="email" type="email" autocomplete="email" maxlength="180" required data-fs-field aria-describedby="business-email-error" />
+            <span class="field-error" id="business-email-error" data-fs-error="email" aria-live="polite"></span>
           </div>
           <div class="form-field">
             <label for="telephone">Telephone <span class="optional-label">Optional</span></label>
-            <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="Include country code" />
+            <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" data-fs-field aria-describedby="telephone-error" placeholder="Include country code" />
+            <span class="field-error" id="telephone-error" data-fs-error="telephone" aria-live="polite"></span>
           </div>
           <div class="form-field form-field-wide">
             <label for="enquiry-type">Enquiry type <span aria-hidden="true">*</span></label>
-            <select id="enquiry-type" name="enquiryType" required aria-describedby="enquiry-type-error">
+            <select id="enquiry-type" name="enquiryType" required data-fs-field aria-describedby="enquiry-type-error">
               <option value="">Select an enquiry type</option>
               <option value="opportunity">Opportunity</option>
               <option value="partnership">Partnership</option>
               <option value="corporate">Corporate enquiry</option>
               <option value="other">Other</option>
             </select>
-            <span class="field-error" id="enquiry-type-error" aria-live="polite"></span>
+            <span class="field-error" id="enquiry-type-error" data-fs-error="enquiryType" aria-live="polite"></span>
           </div>
           <div class="form-field form-field-wide">
             <label for="message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" rows="7" minlength="20" maxlength="1500" required aria-describedby="message-guidance message-error"></textarea>
+            <textarea id="message" name="message" rows="7" minlength="20" maxlength="1500" required data-fs-field aria-describedby="message-guidance message-error"></textarea>
             <span class="field-guidance" id="message-guidance">20–1,500 characters. Please do not include confidential information.</span>
-            <span class="field-error" id="message-error" aria-live="polite"></span>
+            <span class="field-error" id="message-error" data-fs-error="message" aria-live="polite"></span>
           </div>
         </div>
 
         <label class="privacy-check" for="privacy-acknowledgement">
-          <input id="privacy-acknowledgement" name="privacyAcknowledgement" type="checkbox" required aria-describedby="privacy-error" />
+          <input id="privacy-acknowledgement" name="privacyAcknowledgement" type="checkbox" required data-fs-field aria-describedby="privacy-error" />
           <span>I understand that the information provided will be used to respond to this enquiry.</span>
         </label>
-        <span class="field-error privacy-error" id="privacy-error" aria-live="polite"></span>
+        <span class="field-error privacy-error" id="privacy-error" data-fs-error="privacyAcknowledgement" aria-live="polite"></span>
 
         <div class="form-actions">
-          <button class="button" type="submit" disabled aria-disabled="true">Send enquiry</button>
+          <button class="button" type="submit" data-fs-submit-btn disabled aria-disabled="true">Send enquiry</button>
           <p><span aria-hidden="true">*</span> Required fields</p>
         </div>
         <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+        <p class="form-availability" data-form-availability hidden={formspreeEnabled}>
+          Online enquiry submissions are temporarily unavailable.
+        </p>
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="contact-website">Leave this field empty</label>
+          <input id="contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
       </form>
     </div>
   </section>
 
-  <script is:inline>
-    const form = document.querySelector('[data-contact-form]');
+  <script>
+    import { initForm } from '@formspree/ajax';
 
-    if (form instanceof HTMLFormElement) {
-      const enquiryType = form.querySelector('#enquiry-type');
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+
+    if (form) {
+      const enquiryType = form.querySelector<HTMLSelectElement>('#enquiry-type');
       const requestedType = new URLSearchParams(window.location.search).get('enquiry');
       const allowedTypes = ['opportunity', 'partnership', 'corporate', 'other'];
 
@@ -128,21 +157,37 @@ import InnerHero from '../components/InnerHero.astro';
         enquiryType.value = requestedType;
       }
 
-      const fields = Array.from(form.querySelectorAll('input[required], select[required], textarea[required]'));
+      const fields = Array.from(
+        form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+          'input[required], select[required], textarea[required]',
+        ),
+      );
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
 
-      const messageFor = (field) => {
+      const messageFor = (field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) => {
+        if (field.required && !field.value.trim()) return 'Please complete this field.';
         if (field.validity.valueMissing) return 'Please complete this field.';
         if (field.validity.typeMismatch) return 'Enter a valid business email address.';
         if (field.validity.tooShort) return `Enter at least ${field.minLength} characters.`;
+        const maxLength = Number(field.getAttribute('maxlength'));
+        if (maxLength && field.value.length > maxLength) return `Enter no more than ${maxLength} characters.`;
         return '';
       };
 
       const validateField = (field) => {
-        const error = document.getElementById(field.getAttribute('aria-describedby')?.split(' ').at(-1) || '');
+        const errorId = field.getAttribute('aria-describedby')?.split(' ').at(-1) || '';
+        const error = document.getElementById(errorId);
         const message = messageFor(field);
         field.setAttribute('aria-invalid', message ? 'true' : 'false');
         if (error) error.textContent = message;
         return !message;
+      };
+
+      const setStatus = (message, state = 'error') => {
+        if (!status) return;
+        status.textContent = message;
+        status.hidden = !message;
+        status.dataset.state = state;
       };
 
       fields.forEach((field) => {
@@ -152,13 +197,77 @@ import InnerHero from '../components/InnerHero.astro';
         });
         field.addEventListener('input', () => {
           if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+          if (status?.dataset.state === 'error') setStatus('');
         });
       });
 
       form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        fields.forEach((field) => validateField(field));
-      });
+        const invalidFields = fields.filter((field) => !validateField(field));
+        if (invalidFields.length > 0) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          setStatus('Please correct the highlighted fields and try again.');
+          invalidFields[0]?.focus();
+        }
+      }, true);
+
+      const formId = form.dataset.formspreeFormId;
+      if (form.dataset.formspreeEnabled === 'true' && formId) {
+        const availability = document.querySelector<HTMLElement>('[data-form-availability]');
+        availability?.remove();
+        const submitButton = form.querySelector<HTMLButtonElement>('[data-fs-submit-btn]');
+
+        initForm({
+          formElement: form,
+          formId,
+          useDefaultStyles: false,
+          disable: ({ form: activeForm }) => {
+            activeForm.setAttribute('aria-busy', 'true');
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.setAttribute('aria-disabled', 'true');
+            }
+          },
+          enable: ({ form: activeForm }) => {
+            activeForm.removeAttribute('aria-busy');
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.setAttribute('aria-disabled', 'false');
+            }
+          },
+          onSubmit: () => setStatus('Sending your enquiry…', 'loading'),
+          onSuccess: () => {
+            form.reset();
+            fields.forEach((field) => {
+              field.removeAttribute('aria-invalid');
+              const errorId = field.getAttribute('aria-describedby')?.split(' ').at(-1) || '';
+              const error = document.getElementById(errorId);
+              if (error) error.textContent = '';
+            });
+            setStatus('Thank you. Your enquiry has been sent.', 'success');
+          },
+          onError: (_context, error) => {
+            const formErrors = error.getFormErrors();
+            const providerMessage = formErrors.map((item) => `${item.code} ${item.message}`).join(' ');
+            if (/429|rate.?limit|too many|try again later/i.test(providerMessage)) {
+              setStatus('There have been too many attempts. Please wait a few minutes before trying again.');
+            } else if (/failed to fetch|network|load failed/i.test(providerMessage)) {
+              setStatus('We could not connect to the enquiry service. Check your connection and try again.');
+            } else if (formErrors.length > 0) {
+              setStatus('We could not send your enquiry. Please try again later.');
+            } else {
+              setStatus('Please correct the highlighted fields and try again.');
+            }
+          },
+          onFailure: () => {
+            setStatus('We could not connect to the enquiry service. Check your connection and try again.');
+          },
+          renderFormError: (_context, message) => {
+            if (message) setStatus('We could not send your enquiry. Please try again later.');
+          },
+          renderSuccess: () => {},
+        });
+      }
     }
   </script>
 </BaseLayout>
