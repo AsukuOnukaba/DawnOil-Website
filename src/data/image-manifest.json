@@ -9,7 +9,7 @@
     "photographer": "Uncredited client-supplied asset",
     "license": "Client-supplied image; production-use provenance requires confirmation",
     "creditSource": "Client-supplied image",
-    "notes": "Homepage hero only; no facility-ownership claim."
+    "notes": "Homepage hero only; no facility-ownership claim. Rights holder, source URL and production permission require management confirmation."
   },
   {
     "id": "about-business-review",
@@ -84,7 +84,7 @@
     "sourceUrl": "https://unsplash.com",
     "creditLicense": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
-    "notes": "Partnership and commercial discussion context."
+    "notes": "Partnership and commercial discussion context; item-level photographer and source record require confirmation."
   },
   {
     "id": "responsibility-landscape",
@@ -129,7 +129,7 @@
     "sourceUrl": "https://unsplash.com",
     "creditLicense": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
-    "notes": "Business enquiry hero; generic commercial discussion context."
+    "notes": "Business enquiry hero; item-level photographer and source record require confirmation."
   },
   {
     "id": "contact-context",

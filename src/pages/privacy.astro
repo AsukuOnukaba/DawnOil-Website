@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    title: 'Information covered by this notice',
+    body: [
+      'This notice applies to personal information provided through Dawn Oil Limited’s corporate website, including a business enquiry. It also covers limited technical information that a hosting provider may process when the website is delivered, such as IP address, browser and device information, requested pages, timestamps and security events.',
+      'The website does not use advertising trackers, marketing subscriptions, user accounts or analytics scripts. The enquiry form is configured to accept submissions only when a Formspree form ID and enablement setting are supplied for a deployment.',
+    ],
+  },
+  {
+    title: 'Information provided in an enquiry',
+    body: [
+      'Depending on the fields completed, an enquiry may include your name, organisation, business email address, optional telephone number, enquiry type and message. Please do not send confidential technical, financial or personal documents through the form.',
+    ],
+  },
+  {
+    title: 'How and why information is used',
+    body: [
+      'Dawn Oil may use enquiry information to understand and respond to a business opportunity, partnership or corporate enquiry; communicate about the matter raised; maintain appropriate business records; and protect the website and company systems from misuse.',
+      'The applicable lawful basis depends on the context and will be selected in accordance with the Nigeria Data Protection Act 2023 and other applicable requirements. It may include taking steps at your request before a business relationship, legitimate interests, compliance with a legal obligation, or consent where consent is the appropriate basis.',
+    ],
+  },
+  {
+    title: 'Service providers and transfers',
+    body: [
+      'Where the enquiry integration is enabled, Formspree acts as the form-delivery service for the configured form. The submitted information may also be handled by the hosting provider and the email provider used for that deployment. No analytics provider is configured on this website.',
+      'If a provider processes personal information outside Nigeria, Dawn Oil will apply the applicable cross-border transfer basis and safeguards required under Nigerian data-protection law.',
+    ],
+  },
+  {
+    title: 'Storage, retention and security',
+    body: [
+      'Dawn Oil will retain enquiry information only for as long as needed for the purpose for which it was collected, related business records and applicable legal obligations.',
+      'Dawn Oil will apply safeguards appropriate to the information and services used. No absolute security guarantee is made.',
+    ],
+  },
+  {
+    title: 'Your rights',
+    body: [
+      'Subject to applicable law, you may have rights to be informed, access your personal information, request correction or erasure, object to or restrict processing, withdraw consent where consent is used, request portability, and obtain human intervention where applicable to automated decision-making. You may also complain to the Nigeria Data Protection Commission.',
+      'To make a request, use the Contact route and identify the nature of the request. Dawn Oil may need to verify identity and will handle the request in accordance with applicable law.',
+    ],
+  },
+  {
+    title: 'Changes to this notice',
+    body: [
+      'This notice may be updated whenever the website, enquiry workflow or service providers change. The effective date will be shown when the notice is issued.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Privacy Notice | Dawn Oil Limited"
+  description="Privacy information for the Dawn Oil Limited corporate website and business enquiries."
+  indexable={false}
+>
+  <section class="section section-cream legal-page" aria-labelledby="privacy-title">
+    <div class="container legal-page-inner">
+      <header class="legal-page-intro">
+        <p class="eyebrow">Privacy</p>
+        <h1 id="privacy-title">Privacy Notice</h1>
+        <p class="lead">How Dawn Oil approaches personal information handled through this corporate website.</p>
+      </header>
+
+      <div class="legal-content">
+        {sections.map((section) => (
+          <section aria-labelledby={`privacy-${section.title.toLowerCase().replaceAll(' ', '-')}`}>
+            <h2 id={`privacy-${section.title.toLowerCase().replaceAll(' ', '-')}`}>{section.title}</h2>
+            {section.body.map((paragraph) => <p>{paragraph}</p>)}
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

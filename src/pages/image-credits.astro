@@ -4,6 +4,8 @@ import imageManifest from '../data/image-manifest.json';
 
 const imageCredits = imageManifest.map((image) => ({
   ...image,
+  pageLabel: image.page === 'home' ? 'Home' : image.page.replace('/', '').replace(/\b\w/g, (letter) => letter.toUpperCase()),
+  sourceRecordIncomplete: !image.sourceUrl || image.sourceUrl === 'https://unsplash.com' || image.photographer.startsWith('Uncredited'),
   photographer:
     image.photographer === 'Unsplash contributor' || image.photographer.startsWith('Uncredited')
       ? undefined
@@ -36,6 +38,10 @@ const imageCredits = imageManifest.map((image) => ({
                   </div>
                 )}
                 <div>
+                  <dt>Used on</dt>
+                  <dd>{image.pageLabel} — {image.section}</dd>
+                </div>
+                <div>
                   <dt>Source</dt>
                   <dd>
                     {image.sourceUrl ? (
@@ -56,6 +62,12 @@ const imageCredits = imageManifest.map((image) => ({
                       )}
                       {image.id === 'capabilities-field-context' && ' (image cropped for page layout)'}
                     </dd>
+                  </div>
+                )}
+                {image.sourceRecordIncomplete && (
+                  <div>
+                    <dt>Rights record</dt>
+                    <dd>Original photographer or source details are not identified in the current record.</dd>
                   </div>
                 )}
               </dl>

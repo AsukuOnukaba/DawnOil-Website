@@ -725,6 +725,7 @@ main:focus {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-wrap: wrap;
   margin-left: auto;
 }
 
@@ -748,6 +749,49 @@ main:focus {
 
 .image-credits-section {
   min-height: 60vh;
+}
+
+.legal-page {
+  min-height: 60vh;
+}
+
+.legal-page-inner {
+  max-width: 940px;
+}
+
+.legal-page-intro {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.legal-page-intro h1 {
+  margin-bottom: 18px;
+}
+
+.legal-page-intro .lead {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.legal-content {
+  display: grid;
+  gap: 38px;
+  max-width: 780px;
+}
+
+.legal-content section {
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.legal-content h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.legal-content p:last-child {
+  margin-bottom: 0;
 }
 
 .image-credits-intro {

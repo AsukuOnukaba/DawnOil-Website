@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    title: 'Purpose of this website',
+    body: [
+      'The Dawn Oil Limited website provides general corporate information about Dawn Oil, its upstream interests and its approach to potential business relationships in Nigeria. Content is provided for information and discussion purposes only.',
+      'Website content is not investment, financial, legal, technical or other professional advice. It is not an offer, invitation, commitment or guarantee concerning any asset, licence, transaction, partnership or investment opportunity.',
+    ],
+  },
+  {
+    title: 'Using the website',
+    body: [
+      'You may access and use the website for lawful, informational purposes. You must not misuse the website, interfere with its operation, attempt unauthorised access, introduce malicious material or use content in a way that infringes the rights of Dawn Oil or another person.',
+    ],
+  },
+  {
+    title: 'Intellectual property',
+    body: [
+      'The Dawn Oil name, logo, website text, layout and other materials may be protected by intellectual-property rights belonging to Dawn Oil or its licensors. You may view and print reasonable extracts for personal or internal business reference, provided that notices are retained and the material is not altered, republished or used to suggest endorsement without permission.',
+      'Nothing in these terms transfers ownership of any intellectual-property right.',
+    ],
+  },
+  {
+    title: 'Third-party links and services',
+    body: [
+      'The website may link to third-party websites or use third-party services, including a form-delivery service where the enquiry integration is enabled. Those providers operate under their own terms and privacy practices. Dawn Oil is not responsible for third-party content or services merely because the website links to or uses them.',
+    ],
+  },
+  {
+    title: 'Accuracy and availability',
+    body: [
+      'Dawn Oil seeks to keep website content useful and current, but information may change and may not always be complete or up to date. Dawn Oil does not promise that the website or every part of it will always be available, uninterrupted or free from error. Nothing in these terms excludes a responsibility that cannot lawfully be excluded.',
+    ],
+  },
+  {
+    title: 'Privacy',
+    body: [
+      'Personal information handled through the website is described in the Privacy Notice. These documents should be read together.',
+    ],
+  },
+  {
+    title: 'Applicable law',
+    body: [
+      'These terms are intended to be governed by the laws of Nigeria. Any dispute arising from use of the website is subject to the jurisdiction of the courts of Nigeria.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Website Terms | Dawn Oil Limited"
+  description="Terms for using the Dawn Oil Limited corporate website."
+  indexable={false}
+>
+  <section class="section section-cream legal-page" aria-labelledby="terms-title">
+    <div class="container legal-page-inner">
+      <header class="legal-page-intro">
+        <p class="eyebrow">Website use</p>
+        <h1 id="terms-title">Website Terms</h1>
+        <p class="lead">Terms for using the Dawn Oil Limited corporate website.</p>
+      </header>
+
+      <div class="legal-content">
+        {sections.map((section) => (
+          <section aria-labelledby={`terms-${section.title.toLowerCase().replaceAll(' ', '-')}`}>
+            <h2 id={`terms-${section.title.toLowerCase().replaceAll(' ', '-')}`}>{section.title}</h2>
+            {section.body.map((paragraph) => <p>{paragraph}</p>)}
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

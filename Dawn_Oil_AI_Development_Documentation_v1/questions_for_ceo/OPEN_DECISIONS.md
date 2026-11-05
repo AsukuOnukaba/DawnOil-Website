@@ -45,8 +45,15 @@ Sand management or any technical field service not established as Dawn's activit
 - No public office address, telephone number or corporate mailbox has been supplied, so only the verified company name is displayed.
 - A final approved Privacy Notice is still required before an enabled form can link to it or process personal data.
 
+## Production finalisation — legal and image-rights blockers
+- `/privacy` and `/terms` are implemented as noindex review routes and must receive management/legal approval before publication as final notices.
+- Confirm the approved privacy contact, legal entity details, Formspree account and recipient mailbox, hosting provider, provider processing locations, cross-border safeguards, retention periods and data-subject request workflow.
+- The homepage pumpjack photograph remains the client-directed asset, but its original creator, source URL, rights holder and production-use permission are not documented. Obtain confirmation before public launch; do not replace the approved hero automatically.
+- The Partnerships and Contact hero records still lack item-level photographer/source URLs. Confirm those records and any required attribution before public launch.
+- No analytics or advertising scripts are present in the current codebase. Confirm this remains true for the production hosting configuration.
+
 ## Phase 3A search, metadata and legal status
 - All public routes have unique titles and descriptions. Shared Open Graph and Twitter metadata is implemented; canonical, `og:url` and absolute social-image URLs are emitted only after an approved production site URL is configured.
 - No sitemap is generated while the production domain is unknown, preventing preview or invented URLs from entering search metadata. The future sitemap must use the approved domain and exclude `/leadership`.
 - `/leadership` remains unlinked and now carries `noindex, nofollow, noarchive`. `robots.txt` permits crawlers to read that page-level directive; the route is absent from navigation and any sitemap. These controls do not provide access control, so the route must not be deployed publicly until its content is approved or the hosting environment protects it.
-- Internal Privacy Notice and Website Terms drafts are in `questions_for_ceo/DRAFT_PRIVACY_NOTICE_AND_WEBSITE_TERMS.md`. They must not become public routes until company details, providers, retention and legal wording are approved.
+- Internal legal drafts remain in `questions_for_ceo/DRAFT_PRIVACY_NOTICE_AND_WEBSITE_TERMS.md`; the new `/privacy` and `/terms` routes are noindex review routes only and must not be treated as final policies until company details, providers, retention and legal wording are approved.
