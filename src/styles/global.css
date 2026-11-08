@@ -1851,6 +1851,16 @@ main:focus {
     min-height: 640px;
   }
 
+  .director-biography-header,
+  .director-biography-body {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .director-biography-mark {
+    max-width: 520px;
+  }
+
   .inner-hero-grid {
     grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
     gap: 5vw;

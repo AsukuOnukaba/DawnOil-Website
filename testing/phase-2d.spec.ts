@@ -21,7 +21,7 @@ test('Leadership presents five linked profiles with active navigation', async ({
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Our leadership');
   await expect(page.locator('[data-director-card]')).toHaveCount(5);
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow, noarchive');
 
   for (const [name, href] of profiles) {
     await expect(page.getByRole('heading', { name, exact: true })).toBeVisible();

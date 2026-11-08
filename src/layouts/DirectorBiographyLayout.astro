@@ -12,6 +12,7 @@ const { profile } = Astro.props;
 <BaseLayout
   title={`${profile.publicName} | Leadership | Dawn Oil Limited`}
   description={profile.shortBiography}
+  indexable={false}
 >
   <article class="director-biography">
     <div class="container director-biography-header">

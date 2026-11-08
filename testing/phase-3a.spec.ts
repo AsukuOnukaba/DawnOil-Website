@@ -5,7 +5,6 @@ const publicRoutes = [
   '/about',
   '/our-focus',
   '/capabilities',
-  '/leadership',
   '/partnerships',
   '/responsibility',
   '/contact',
@@ -16,15 +15,16 @@ test('public routes expose consistent metadata and valid active navigation', asy
   const seenDescriptions = new Set<string>();
 
   for (const route of publicRoutes) {
+    const canonicalPath = route === '/' ? '/' : `${route}/`;
     const response = await page.goto(route, { waitUntil: 'load' });
     expect(response?.status(), route).toBe(200);
     await expect(page.locator('h1'), `${route} H1`).toHaveCount(1);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow');
-    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
-    await expect(page.locator('meta[property="og:url"]')).toHaveCount(0);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://dawnoilinc.com${canonicalPath}`);
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', `https://dawnoilinc.com${canonicalPath}`);
     await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'Dawn Oil Limited');
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
-    await expect(page.locator('meta[property="og:image"]')).toHaveCount(0);
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://dawnoilinc.com/assets/hero/dawn-upstream-pumpjack.jpg');
 
     const title = await page.title();
     const description = await page.locator('meta[name="description"]').getAttribute('content');
@@ -64,10 +64,10 @@ test('contact query parameters preselect valid enquiry types and submission stay
   await expect(page.getByRole('button', { name: 'Send enquiry' })).toBeDisabled();
 });
 
-test('Leadership is linked and available for indexing', async ({ page, request }) => {
+test('Leadership is linked but excluded from indexing until approval', async ({ page, request }) => {
   const response = await page.goto('/leadership', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow, noarchive');
   await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
   await expect(page.locator('.desktop-nav a[href="/leadership"]')).toHaveAttribute('aria-current', 'page');
   await expect(page.locator('[data-director-card]')).toHaveCount(5);
@@ -77,7 +77,9 @@ test('Leadership is linked and available for indexing', async ({ page, request }
   expect(await robots.text()).toContain('Allow: /');
 
   const sitemap = await request.get('/sitemap.xml');
-  expect(sitemap.status()).toBe(404);
+  expect(sitemap.status()).toBe(200);
+  expect(await sitemap.text()).toContain('https://dawnoilinc.com/');
+  expect(await sitemap.text()).not.toContain('/leadership');
 });
 
 test('keyboard navigation and reduced motion remain functional', async ({ page }, testInfo) => {
