@@ -9,7 +9,7 @@
     "photographer": "Uncredited client-supplied asset",
     "license": "Client-supplied image; production-use provenance requires confirmation",
     "creditSource": "Client-supplied image",
-    "notes": "Homepage hero only; no facility-ownership claim. Rights holder, source URL and production permission require management confirmation."
+    "notes": "Homepage hero only; no facility-ownership claim. Local JPEG metadata identifies Canva (Lightspeed Local) as editing software only; it does not identify the creator, source URL, rights holder or permission. Targeted Dawn-document, Git, filename and web searches did not establish provenance. Management confirmation remains required."
   },
   {
     "id": "about-business-review",
@@ -84,7 +84,7 @@
     "sourceUrl": "https://unsplash.com",
     "creditLicense": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
-    "notes": "Partnership and commercial discussion context; item-level photographer and source record require confirmation."
+    "notes": "Partnership and commercial discussion context; the WebP contains no discoverable photographer or source metadata. Targeted Dawn-document, Git, filename and web searches did not establish the exact Unsplash image page or photographer. Item-level source and permission confirmation remain required."
   },
   {
     "id": "responsibility-landscape",
@@ -129,7 +129,7 @@
     "sourceUrl": "https://unsplash.com",
     "creditLicense": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
-    "notes": "Business enquiry hero; item-level photographer and source record require confirmation."
+    "notes": "Business enquiry hero; the WebP contains no discoverable photographer or source metadata. Targeted Dawn-document, Git, filename and web searches did not establish the exact Unsplash image page or photographer. Item-level source and permission confirmation remain required."
   },
   {
     "id": "contact-context",

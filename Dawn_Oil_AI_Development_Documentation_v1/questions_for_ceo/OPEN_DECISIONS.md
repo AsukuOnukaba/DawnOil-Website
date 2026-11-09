@@ -52,6 +52,11 @@ Sand management or any technical field service not established as Dawn's activit
 - The Partnerships and Contact hero records still lack item-level photographer/source URLs. Confirm those records and any required attribution before public launch.
 - No analytics or advertising scripts are present in the current codebase. Confirm this remains true for the production hosting configuration.
 
+### Image-source investigation — 9 November 2026
+- `public/assets/hero/dawn-upstream-pumpjack.jpg` is the homepage hero and remains the client-directed former Aureum hero. Its local JPEG metadata identifies Canva (Lightspeed Local) as editing software only; no creator, source URL, rights holder or production-use permission was found in Dawn documents, Git history, embedded metadata or targeted web searches.
+- `public/assets/editorial/partnerships-strategy.webp` is the `/partnerships` hero and `public/assets/editorial/contact-business-meeting.webp` is the `/contact` hero. Both are recorded as Unsplash images, but their WebP metadata, Dawn documents, Git history, filenames and targeted web searches do not establish the exact image-page URLs or photographers.
+- Next practical step: obtain the original downloads or source records from the asset supplier/client. If unavailable, upload each original file to Google Lens or TinEye, compare the exact composition rather than a visually similar result, and retain the matched image-page URL plus licence evidence before changing the manifest or Image Credits page.
+
 ## Phase 3A search, metadata and legal status
 - All public routes have unique titles and descriptions. Shared Open Graph and Twitter metadata is implemented; canonical, `og:url` and absolute social-image URLs are emitted only after an approved production site URL is configured.
 - No sitemap is generated while the production domain is unknown, preventing preview or invented URLs from entering search metadata. The future sitemap must use the approved domain and exclude `/leadership`.
